@@ -1,0 +1,39 @@
+/* Bare METAL! */
+
+#include "stm8s.h"
+#include <stdint.h>
+
+#define F_CPU 2000000UL // 2Mhz
+#define LED_PIN     3
+
+static inline void delay_ms (uint32_t ms) {
+    uint32_t i;
+    for (i = 0; i < ((F_CPU/18/1000UL)*ms); i++) {
+        __asm__("nop");
+    }
+}
+
+void timer_isr (void) __interrupt (TIM4_ISR) {
+    PD_ODR ^= (1 << LED_PIN);
+    TIM4_SR &= ~(1 << TIM4_SR_UIF);
+}
+
+int main() {
+    __asm__("rim");
+
+    /* Set PD3 as output */
+    PD_DDR |= (1 << LED_PIN);
+    PD_CR1 |= (1 << LED_PIN);
+
+    /* Prescaler = 128 */
+
+    TIM4_ARR = 159;
+    TIM4_PSCR = 0b00000111;
+    TIM4_IER |= (1 << TIM4_IER_UIE); // Enable Update Interrupt
+    TIM4_CR1 |= (1 << TIM4_CR1_CEN); // Enable TIM4
+
+
+    while (1) {
+        //delay_ms(2);
+    }
+}
