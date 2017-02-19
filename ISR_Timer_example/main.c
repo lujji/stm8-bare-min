@@ -1,17 +1,8 @@
-/* Bare METAL! */
-
-#include "stm8s.h"
 #include <stdint.h>
+#include "stm8s.h"
+#include "delay.h"
 
-#define F_CPU 2000000UL // 2Mhz
 #define LED_PIN     3
-
-static inline void delay_ms (uint32_t ms) {
-    uint32_t i;
-    for (i = 0; i < ((F_CPU/18/1000UL)*ms); i++) {
-        __asm__("nop");
-    }
-}
 
 void timer_isr (void) __interrupt (TIM4_ISR) {
     PD_ODR ^= (1 << LED_PIN);
@@ -19,7 +10,7 @@ void timer_isr (void) __interrupt (TIM4_ISR) {
 }
 
 int main() {
-    __asm__("rim");
+    enable_interrupts();
 
     /* Set PD3 as output */
     PD_DDR |= (1 << LED_PIN);

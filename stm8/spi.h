@@ -3,8 +3,6 @@
 
 #include <stdint.h>
 
-#define CS_PIN 5
-
 /*
  * SPI pinout:
  * SCK  -> PC5

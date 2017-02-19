@@ -7,20 +7,37 @@
 #define CLK_CCOR                _SFR_(0xC9)
 #define CLK_CCOR_CCOEN          0
 
+/* PORT A */
+#define PA_ODR                  _SFR_(0x00)
+#define PA_IDR                  _SFR_(0x01)
+#define PA_DDR                  _SFR_(0x02)
+#define PA_CR1                  _SFR_(0x03)
+#define PA_CR2                  _SFR_(0x04)
+
+/* PORT B */
+#define PB_ODR                  _SFR_(0x05)
+#define PB_IDR                  _SFR_(0x06)
+#define PB_DDR                  _SFR_(0x07)
+#define PB_CR1                  _SFR_(0x08)
+#define PB_CR2                  _SFR_(0x09)
+
 /* PORT C */
 #define PC_ODR                  _SFR_(0x0A)
+#define PC_IDR                  _SFR_(0x0B)
 #define PC_DDR                  _SFR_(0x0C)
 #define PC_CR1                  _SFR_(0x0D)
 #define PC_CR2                  _SFR_(0x0E)
 
 /* PORT D */
 #define PD_ODR                  _SFR_(0x0F)
+#define PD_IDR                  _SFR_(0x10)
 #define PD_DDR                  _SFR_(0x11)
 #define PD_CR1                  _SFR_(0x12)
 #define PD_CR2                  _SFR_(0x13)
 
 /* PORT E */
 #define PE_ODR                  _SFR_(0x14)
+#define PE_IDR                  _SFR_(0x15)
 #define PE_DDR                  _SFR_(0x16)
 #define PE_CR1                  _SFR_(0x17)
 #define PE_CR2                  _SFR_(0x18)
@@ -36,9 +53,19 @@
 #define SPI_CR1_CPOL            1
 #define SPI_CR1_CPHA            0
 #define SPI_CR2                 _SFR_(0x201)
+#define SPI_CR2_BDM             7
+#define SPI_CR2_BDOE            6
+#define SPI_CR2_CRCEN           5
+#define SPI_CR2_CRCNEXT         4
+#define SPI_CR2_RXONLY          2
 #define SPI_CR2_SSM             1
 #define SPI_CR2_SSI             0
 #define SPI_SR                  _SFR_(0x203)
+#define SPI_SR_BSY              7
+#define SPI_SR_OVR              6
+#define SPI_SR_MODF             5
+#define SPI_SR_CRCERR           4
+#define SPI_SR_WKUP             3
 #define SPI_SR_TXE              1
 #define SPI_SR_RXNE             0
 #define SPI_DR                  _SFR_(0x204)
