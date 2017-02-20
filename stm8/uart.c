@@ -7,19 +7,19 @@
  */
 void uart_init() {
     // 2000000/9600 = 208 (0xD0)
-    UART_BRR1 = 0x0D;
-    UART_BRR2 = 0x00;
-    UART_CR2 = (1 << UART_CR2_TEN) | (1 << UART_CR2_REN);
+    UART2_BRR1 = 0x0D;
+    UART2_BRR2 = 0x00;
+    UART2_CR2 = (1 << UART2_CR2_TEN) | (1 << UART2_CR2_REN);
 }
 
 void uart_write(uint8_t data) {
-    UART_DR = data;
-    while (!(UART_SR & (1 << UART_SR_TC)));
+    UART2_DR = data;
+    while (!(UART2_SR & (1 << UART2_SR_TC)));
 }
 
 uint8_t uart_read() {
-    while (!(UART_SR & (1 << UART_SR_RXNE)));
-    return UART_DR;
+    while (!(UART2_SR & (1 << UART2_SR_RXNE)));
+    return UART2_DR;
 }
 
 int putchar(int c) {

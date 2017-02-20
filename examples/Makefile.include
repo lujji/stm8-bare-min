@@ -3,16 +3,19 @@ export PATH := $(PATH):$(HOME)/local/sdcc/bin
 MCU  = stm8s003f3
 ARCH = stm8
 
-F_CPU    = 2000000
-TARGET   = main.ihx
+F_CPU   ?= 2000000
+TARGET  ?= main.ihx
 
-SRCS     = $(wildcard *.c ../stm8/*.c)
+LIBDIR   = ../../stm8
+
+SRCS     = $(wildcard *.c $(LIBDIR)/*.c)
 OBJS     = $(SRCS:.c=.rel)
 
 CC       = sdcc
 LD       = sdld
-CFLAGS   = -m$(ARCH) -p$(MCU) --std-sdcc11 -DF_CPU=$(F_CPU)UL
-CFLAGS  += --stack-auto --noinduction --use-non-free -I. -I../stm8
+CFLAGS   = -m$(ARCH) -p$(MCU) --std-sdcc11
+CFLAGS  += -DF_CPU=$(F_CPU)UL -I. -I$(LIBDIR)
+CFLAGS  += --stack-auto --noinduction --use-non-free
 LDFLAGS  = -m$(ARCH) -l$(ARCH) --out-fmt-ihx
 
 all: $(TARGET)

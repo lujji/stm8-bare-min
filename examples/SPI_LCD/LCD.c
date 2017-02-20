@@ -48,9 +48,14 @@ void LCD_goto(uint8_t col, uint8_t row) {
 }
 
 void LCD_putc(char c) {
-    const char *ptr = &font[(c - 32) * FONT_WIDTH];
-    for (uint8_t i = 0; i < FONT_WIDTH; i++, ptr++)
-        if (*ptr)
-            LCD_write(*ptr);
-    LCD_write(0);
+    if (c == ' ') {
+        LCD_write(0);
+        LCD_write(0);
+    } else {
+        const char *ptr = &font[(c - 32) * FONT_WIDTH];
+        for (uint8_t i = 0; i < FONT_WIDTH; i++, ptr++)
+            if (*ptr)
+                LCD_write(*ptr);
+        LCD_write(0);
+    }
 }

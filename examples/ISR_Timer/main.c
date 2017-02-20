@@ -17,7 +17,6 @@ int main() {
     PD_CR1 |= (1 << LED_PIN);
 
     /* Prescaler = 128 */
-
     TIM4_ARR = 159;
     TIM4_PSCR = 0b00000111;
     TIM4_IER |= (1 << TIM4_IER_UIE); // Enable Update Interrupt
@@ -25,6 +24,6 @@ int main() {
 
 
     while (1) {
-        //delay_ms(2);
+        // do nothing
     }
 }

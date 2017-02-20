@@ -2,11 +2,10 @@
 #include <string.h>
 #include <math.h>
 #include "stm8s.h"
+#include "delay.h"
 #include "uart.h"
-#include "spi.h"
 #include "i2c.h"
 
-#define F_CPU               2000000UL // 2Mhz
 #define LED_PIN             0
 
 #define HMC5883_ADDR        (0x1E << 1)
@@ -16,19 +15,6 @@
 #define HMC5883_DATA_OUT    0x03
 #define HMC5883_ID_REG_A    0x0A
 
-static inline void delay_ms(uint32_t ms) {
-    for (uint32_t i = 0; i < ((F_CPU / 18 / 1000UL) * ms); i++) {
-        __asm__("nop");
-    }
-}
-
-/**
- * Clock output on PE0
- */
-void ckout() {
-    PE_CR1 |= (1 << 0);
-    CLK_CCOR |= (1 << CLK_CCOR_CCOEN) | (1 << 3);
-}
 
 uint8_t id[3];
 

@@ -9,9 +9,9 @@
 #define LCD_H_
 
 #include <stdint.h>
-#include "stm8s.h"
-#include "spi.h"
-#include "delay.h"
+#include <stm8s.h>
+#include <spi.h>
+#include <delay.h>
 
 /* LCD connection:
  *

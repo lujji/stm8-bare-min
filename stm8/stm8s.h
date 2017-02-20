@@ -3,10 +3,6 @@
 
 #define _SFR_(mem_addr)         (*(volatile uint8_t *)(0x5000 + (mem_addr)))
 
-/* Clock */
-#define CLK_CCOR                _SFR_(0xC9)
-#define CLK_CCOR_CCOEN          0
-
 /* PORT A */
 #define PA_ODR                  _SFR_(0x00)
 #define PA_IDR                  _SFR_(0x01)
@@ -42,6 +38,33 @@
 #define PE_CR1                  _SFR_(0x17)
 #define PE_CR2                  _SFR_(0x18)
 
+/* PORT F */
+#define PF_ODR                  _SFR_(0x19)
+#define PF_IDR                  _SFR_(0x1A)
+#define PF_DDR                  _SFR_(0x1B)
+#define PF_CR1                  _SFR_(0x1C)
+#define PF_CR2                  _SFR_(0x1D)
+
+/* Clock */
+#define CLK_CMSR                _SFR_(0xC3)
+#define CLK_SWR                 _SFR_(0xC4)
+#define CLK_SWCR                _SFR_(0xC5)
+#define CLK_CKDIVR              _SFR_(0xC6)
+#define CLK_PCKENR1             _SFR_(0xC7)
+#define CLK_CSSR                _SFR_(0xC8)
+#define CLK_CCOR                _SFR_(0xC9)
+#define CLK_CCOR_CCOEN          0
+#define CLK_PCKENR2             _SFR_(0xCA)
+#define CLK_HSITRIMR            _SFR_(0xCC)
+#define CLK_SWIMCCR             _SFR_(0xCD)
+
+/* Watchdog */
+#define WWDG_CR                 _SFR_(0xD1)
+#define WWDG_WR                 _SFR_(0xD2)
+#define IWWDG_KR                _SFR_(0xE0)
+#define IWWDG_PR                _SFR_(0xE1)
+#define IWWDG_RLR               _SFR_(0xE2)
+
 /* SPI */
 #define SPI_CR1                 _SFR_(0x200)
 #define SPI_CR1_LSBFIRST        7
@@ -60,6 +83,7 @@
 #define SPI_CR2_RXONLY          2
 #define SPI_CR2_SSM             1
 #define SPI_CR2_SSI             0
+#define SPI_ICR                 _SFR_(0x202)
 #define SPI_SR                  _SFR_(0x203)
 #define SPI_SR_BSY              7
 #define SPI_SR_OVR              6
@@ -69,6 +93,9 @@
 #define SPI_SR_TXE              1
 #define SPI_SR_RXNE             0
 #define SPI_DR                  _SFR_(0x204)
+#define SPI_CRCPR               _SFR_(0x205)
+#define SPI_RXCRCR              _SFR_(0x206)
+#define SPI_TXCRCR              _SFR_(0x207)
 
 /* I2C */
 #define I2C_CR1                 _SFR_(0x210)
@@ -99,25 +126,45 @@
 #define I2C_ITR                 _SFR_(0x21A)
 #define I2C_CCRL                _SFR_(0x21B)
 #define I2C_CCRH                _SFR_(0x21C)
+#define I2C_TRISER              _SFR_(0x21D)
+#define I2C_PECR                _SFR_(0x21E)
 
-/* UART */
-#define UART_SR                 _SFR_(0x240)
-#define UART_SR_TXE             7
-#define UART_SR_TC              6
-#define UART_SR_RXNE            5
-#define UART_DR                 _SFR_(0x241)
-#define UART_BRR1               _SFR_(0x242)
-#define UART_BRR2               _SFR_(0x243)
-#define UART_CR1                _SFR_(0x244)
-#define UART_CR2                _SFR_(0x245)
-#define UART_CR2_TEN            3
-#define UART_CR2_REN            2
-#define UART_CR3                _SFR_(0x246)
-#define UART_CR4                _SFR_(0x247)
-#define UART_CR5                _SFR_(0x248)
-#define UART_CR6                _SFR_(0x249)
-#define UART_GTR                _SFR_(0x24A)
-#define UART_PSCR               _SFR_(0x24B)
+/* UART1 */
+#define UART1_SR                _SFR_(0x230)
+#define UART1_SR_TXE            7
+#define UART1_SR_TC             6
+#define UART1_SR_RXNE           5
+#define UART1_DR                _SFR_(0x231)
+#define UART1_BRR1              _SFR_(0x232)
+#define UART1_BRR2              _SFR_(0x233)
+#define UART1_CR1               _SFR_(0x234)
+#define UART1_CR2               _SFR_(0x235)
+#define UART1_CR2_TEN           3
+#define UART1_CR2_REN           2
+#define UART1_CR3               _SFR_(0x236)
+#define UART1_CR4               _SFR_(0x237)
+#define UART1_CR5               _SFR_(0x238)
+#define UART1_GTR               _SFR_(0x239)
+#define UART1_PSCR              _SFR_(0x23A)
+
+/* UART2 */
+#define UART2_SR                _SFR_(0x240)
+#define UART2_SR_TXE            7
+#define UART2_SR_TC             6
+#define UART2_SR_RXNE           5
+#define UART2_DR                _SFR_(0x241)
+#define UART2_BRR1              _SFR_(0x242)
+#define UART2_BRR2              _SFR_(0x243)
+#define UART2_CR1               _SFR_(0x244)
+#define UART2_CR2               _SFR_(0x245)
+#define UART2_CR2_TEN           3
+#define UART2_CR2_REN           2
+#define UART2_CR3               _SFR_(0x246)
+#define UART2_CR4               _SFR_(0x247)
+#define UART2_CR5               _SFR_(0x248)
+#define UART2_CR6               _SFR_(0x249)
+#define UART2_GTR               _SFR_(0x24A)
+#define UART2_PSCR              _SFR_(0x24B)
 
 /* TIM4 */
 #define TIM4_CR1                _SFR_(0x340)
