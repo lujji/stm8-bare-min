@@ -180,6 +180,45 @@
 #define TIM4_PSCR               _SFR_(0x347)
 #define TIM4_ARR                _SFR_(0x348)
 
+/* ADC1 */
+#define ADC_DB0R                _SFR_(0x3E0)
+
+#define ADC_CSR                 _SFR_(0x400)
+#define ADC_CSR_EOC             7
+#define ADC_CSR_AWD             6
+#define ADC_CSR_EOCIE           5
+#define ADC_CSR_CH3             3
+#define ADC_CSR_CH2             2
+#define ADC_CSR_CH1             1
+#define ADC_CSR_CH0             0
+#define ADC_CR1                 _SFR_(0x401)
+#define ADC_CR1_SPSEL2          6
+#define ADC_CR1_SPSEL1          5
+#define ADC_CR1_SPSEL0          4
+#define ADC_CR1_CONT            1
+#define ADC_CR1_ADON            0
+#define ADC_CR2                 _SFR_(0x402)
+#define ADC_CR2_EXTTRIG         6
+#define ADC_CR2_EXTSEL1         5
+#define ADC_CR2_EXTSEL0         4
+#define ADC_CR2_ALIGN           3
+#define ADC_CR2_SCAN            1
+#define ADC_CR3                 _SFR_(0x403)
+#define ADC_CR3_DBUF            7
+#define ADC_CR3_OVR             6
+#define ADC_DRH                 _SFR_(0x404)
+#define ADC_DRL                 _SFR_(0x405)
+#define ADC_TDRH                _SFR_(0x406)
+#define ADC_TDRL                _SFR_(0x407)
+#define ADC_HTRH                _SFR_(0x408)
+#define ADC_HTRL                _SFR_(0x409)
+#define ADC_LTRH                _SFR_(0x40A)
+#define ADC_LTRL                _SFR_(0x40B)
+#define ADC_AWSRH               _SFR_(0x40C)
+#define ADC_AWSRL               _SFR_(0x40D)
+#define ADC_AWCRH               _SFR_(0x40E)
+#define ADC_AWCRL               _SFR_(0x40F)
+
 /* Interrupts */
 #define TLI_ISR                 0
 #define AWU_ISR                 1
