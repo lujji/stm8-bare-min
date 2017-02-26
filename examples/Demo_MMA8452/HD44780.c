@@ -49,7 +49,7 @@ void LCD_init(void) {
     /* LCD initialization */
     LCD_write4(0x02); // 4-bit mode
     LCD_delay_ms(20);
-    LCD_write(0x28); // 2-line mode
+    LCD_write(0x22); // 2-line mode
     LCD_write(0x08); // off
     LCD_write(0x01); // clear
     LCD_write(0x06); // entry mode
