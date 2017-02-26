@@ -21,8 +21,3 @@ uint8_t uart_read() {
     while (!(UART1_SR & (1 << UART1_SR_RXNE)));
     return UART1_DR;
 }
-
-int putchar(int c) {
-    uart_write(c);
-    return 0;
-}

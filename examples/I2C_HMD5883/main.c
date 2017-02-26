@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
-#include "stm8s.h"
-#include "delay.h"
-#include "uart.h"
-#include "i2c.h"
+#include <stm8s.h>
+#include <delay.h>
+#include <uart.h>
+#include <i2c.h>
 
 #define LED_PIN             0
 
@@ -15,8 +15,13 @@
 #define HMC5883_DATA_OUT    0x03
 #define HMC5883_ID_REG_A    0x0A
 
-
 uint8_t id[3];
+int x, y, z;
+
+int putchar(int c) {
+    uart_write(c);
+    return 0;
+}
 
 void hmc5883_get_id(uint8_t *id) {
     i2c_start();
@@ -28,8 +33,6 @@ void hmc5883_get_id(uint8_t *id) {
     i2c_write_addr(HMC5883_ADDR + I2C_READ);
     i2c_read_arr(id, 3);
 }
-
-int x, y, z;
 
 void measure() {
     /* Gain */
@@ -66,17 +69,6 @@ void measure() {
     i2c_stop();
 
     printf("x: %d y: %d z: %d\n", x, y, z);
-}
-
-void show_id() {
-    hmc5883_get_id(id);
-    uart_write('I');
-    uart_write('d');
-    uart_write(':');
-    uart_write(id[0]);
-    uart_write(id[1]);
-    uart_write(id[2]);
-    uart_write('\n');
 }
 
 int main() {

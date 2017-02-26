@@ -1,4 +1,5 @@
 #include "LCD.h"
+#include "LCD_config.h"
 #include "font_5x8.h"
 
 #define FONT_WIDTH 5
