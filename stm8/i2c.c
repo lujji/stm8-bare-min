@@ -30,31 +30,39 @@ void i2c_write_addr(uint8_t addr) {
     I2C_CR2 |= (1 << I2C_CR2_ACK);
 }
 
-uint8_t i2c_read(uint8_t ack) {
-    if (ack)
-        I2C_CR2 |= (1 << I2C_CR2_ACK);
-    else
-        I2C_CR2 &= ~(1 << I2C_CR2_ACK);
+uint8_t i2c_read() {
+    I2C_CR2 &= ~(1 << I2C_CR2_ACK);
+    i2c_stop();
     while (!(I2C_SR1 & (1 << I2C_SR1_RXNE)));
     return I2C_DR;
 }
 
 void i2c_read_arr(uint8_t *buf, int len) {
-    I2C_CR2 |= (1 << I2C_CR2_ACK); // ACK
-    while (len > 2) {
-        /* Read into buffer */
+    while(len-- > 1) {
+        I2C_CR2 |= (1 << I2C_CR2_ACK);
         while (!(I2C_SR1 & (1 << I2C_SR1_RXNE)));
         *(buf++) = I2C_DR;
-        len--;
     }
-
-    /* Read last 2 bytes */
-    while (!(I2C_SR1 & (1 << I2C_SR1_RXNE)));
-    I2C_CR2 &= ~(1 << I2C_CR2_ACK); // NACK
-    i2c_stop();
-    *(buf++) = I2C_DR;
-
-    while (!(I2C_SR1 & (1 << I2C_SR1_RXNE)));
-    *buf = I2C_DR;
-    //I2C_CR2 |= (1 << I2C_ACK); // ACK
+    *buf = i2c_read();
 }
+
+///////////////////////////////////////////////
+// void i2c_read_arr(uint8_t *buf, int len) {
+//     I2C_CR2 |= (1 << I2C_CR2_ACK); // ACK
+//     while (len > 2) {
+//         /* Read into buffer */
+//         while (!(I2C_SR1 & (1 << I2C_SR1_RXNE)));
+//         *(buf++) = I2C_DR;
+//         len--;
+//     }
+//
+//     /* Read last 2 bytes */
+//     while (!(I2C_SR1 & (1 << I2C_SR1_RXNE)));
+//     I2C_CR2 &= ~(1 << I2C_CR2_ACK); // NACK
+//     i2c_stop();
+//     *(buf++) = I2C_DR;
+//
+//     while (!(I2C_SR1 & (1 << I2C_SR1_RXNE)));
+//     *buf = I2C_DR;
+//     I2C_CR2 |= (1 << I2C_CR2_ACK); // ACK
+// }
