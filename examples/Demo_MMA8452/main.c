@@ -64,7 +64,7 @@ int main() {
         x /= 50;
         y /= 50;
         z /= 50;
-        angle = acosf((z / sqrtf(x * x + y * y + z * z))) * (180.0 / 3.1415927);
+        angle = acosf((y / sqrtf(x * x + y * y + z * z))) * (180.0 / 3.1415927);
 
         LCD_goto(0, 0);
         angle_to_str((uint16_t) angle, &txt[sizeof(TAG) - 1]);

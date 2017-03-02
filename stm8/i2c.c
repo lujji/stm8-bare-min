@@ -38,7 +38,7 @@ uint8_t i2c_read() {
 }
 
 void i2c_read_arr(uint8_t *buf, int len) {
-    while(len-- > 1) {
+    while (len-- > 1) {
         I2C_CR2 |= (1 << I2C_CR2_ACK);
         while (!(I2C_SR1 & (1 << I2C_SR1_RXNE)));
         *(buf++) = I2C_DR;

@@ -1,11 +1,11 @@
 #include <stdint.h>
-#include "stm8s.h"
-#include "delay.h"
+#include <stm8s.h>
+#include <delay.h>
 
-#define LED_PIN     3
+#define OUTPUT_PIN      3
 
-void timer_isr (void) __interrupt (TIM4_ISR) {
-    PD_ODR ^= (1 << LED_PIN);
+void timer_isr(void) __interrupt(TIM4_ISR) {
+    PD_ODR ^= (1 << OUTPUT_PIN);
     TIM4_SR &= ~(1 << TIM4_SR_UIF);
 }
 
@@ -13,12 +13,16 @@ int main() {
     enable_interrupts();
 
     /* Set PD3 as output */
-    PD_DDR |= (1 << LED_PIN);
-    PD_CR1 |= (1 << LED_PIN);
+    PD_DDR |= (1 << OUTPUT_PIN);
+    PD_CR1 |= (1 << OUTPUT_PIN);
 
     /* Prescaler = 128 */
-    TIM4_ARR = 159;
     TIM4_PSCR = 0b00000111;
+
+    /* Frequency = F_CLK / (2 * prescaler * (1 + ARR))
+     *           = 2 MHz / (2 * 128 * (1 + 77)) = 100 Hz */
+    TIM4_ARR = 77;
+
     TIM4_IER |= (1 << TIM4_IER_UIE); // Enable Update Interrupt
     TIM4_CR1 |= (1 << TIM4_CR1_CEN); // Enable TIM4
 
