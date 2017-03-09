@@ -2,9 +2,11 @@
 #include "stm8s.h"
 
 void uart_init() {
-    // 2000000/9600 = 208 (0xD0)
-    UART1_BRR1 = 0x0D;
-    UART1_BRR2 = 0x00;
+    /* madness.. */
+    uint16_t div = F_CPU / BAUDRATE;
+    UART1_BRR1 = div >> 4;
+    UART1_BRR2 = ((div >> 8) & 0xF0) + (div & 0x0F);
+    /* enable transmitter and receiver */
     UART1_CR2 = (1 << UART1_CR2_TEN) | (1 << UART1_CR2_REN);
 }
 

@@ -8,8 +8,8 @@ Tiny peripheral library for STM8. This library was developed as a supplement to 
 
 ## Building
 Dependencies:
-    1. [sdcc](https://sourceforge.net/projects/sdcc/)
-    2. [stm8flash](https://github.com/vdudouyt/stm8flash)
+ 1. [sdcc](https://sourceforge.net/projects/sdcc/)
+ 2. [stm8flash](https://github.com/vdudouyt/stm8flash)
 
 Building example project:
 
