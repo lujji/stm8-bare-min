@@ -4,7 +4,6 @@
 void SPI_init() {
     SPI_CR1 = (1 << SPI_CR1_MSTR) | (1 << SPI_CR1_SPE) | (1 << SPI_CR1_BR1);
     SPI_CR2 = (1 << SPI_CR2_SSM) | (1 << SPI_CR2_SSI) | (1 << SPI_CR2_BDM) | (1 << SPI_CR2_BDOE);
-    //| (1 << SPI_CR1_CPOL) | (1 << SPI_CR1_CPHA);
 }
 
 uint8_t SPI_read() {

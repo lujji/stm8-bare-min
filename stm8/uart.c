@@ -1,10 +1,6 @@
 #include "uart.h"
 #include "stm8s.h"
 
-/*
- * PD5 -> CN4.10 (TX)
- * PD6 -> CN4.11 (RX)
- */
 void uart_init() {
     // 2000000/9600 = 208 (0xD0)
     UART1_BRR1 = 0x0D;

@@ -38,7 +38,7 @@ void main() {
 
     while (1) {
         uint16_t val = ADC_read();
-        float voltage = (V_REF/1024.0) * val * 1000;
+        float voltage = (V_REF / 1024.0) * val * 1000;
         printf("Channel4: %d mV\n", (uint16_t) voltage);
         delay_ms(250);
     }

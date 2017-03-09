@@ -26,7 +26,6 @@ int main() {
     TIM4_IER |= (1 << TIM4_IER_UIE); // Enable Update Interrupt
     TIM4_CR1 |= (1 << TIM4_CR1_CEN); // Enable TIM4
 
-
     while (1) {
         // do nothing
     }

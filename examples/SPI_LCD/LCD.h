@@ -23,7 +23,7 @@ void LCD_cmd(uint8_t command);
  * col: 0 .. 83
  * row: 0 .. 5
  */
-void LCD_goto(uint8_t x, uint8_t y);
+void LCD_goto(uint8_t col, uint8_t row);
 
 /*
  * Write char to display

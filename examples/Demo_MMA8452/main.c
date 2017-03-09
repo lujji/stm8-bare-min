@@ -7,6 +7,10 @@
 #include "HD44780.h"
 #include "MMA8452.h"
 
+#ifndef PI
+#define PI   3.1415927
+#endif
+
 #define TAG  "Tilt: "
 
 char txt[16] = TAG;
@@ -64,7 +68,7 @@ int main() {
         x /= 50;
         y /= 50;
         z /= 50;
-        angle = acosf((y / sqrtf(x * x + y * y + z * z))) * (180.0 / 3.1415927);
+        angle = acosf((y / sqrtf(x * x + y * y + z * z))) * (180.0 / PI);
 
         LCD_goto(0, 0);
         angle_to_str((uint16_t) angle, &txt[sizeof(TAG) - 1]);

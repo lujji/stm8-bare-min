@@ -4,7 +4,9 @@
 #include <stdint.h>
 
 /*
- * SPI pinout:
+ * Initialize SPI in MODE1.
+ *
+ * Pinout:
  * SCK  -> PC5
  * MOSI -> PC6
  * MISO -> PC7
