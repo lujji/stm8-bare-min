@@ -1,6 +1,8 @@
 #ifndef STM8S_H
 #define STM8S_H
 
+#include <stdint.h>
+
 #define _SFR_(mem_addr)         (*(volatile uint8_t *)(0x5000 + (mem_addr)))
 
 /* PORT A */
@@ -45,10 +47,49 @@
 #define PF_CR1                  _SFR_(0x1C)
 #define PF_CR2                  _SFR_(0x1D)
 
+/* Flash */
+#define FLASH_CR1               _SFR_(0x5A)
+#define FLASH_CR1_HALT          3
+#define FLASH_CR1_AHALT         2
+#define FLASH_CR1_IE            1
+#define FLASH_CR1_FIX           0
+#define FLASH_CR2               _SFR_(0x5B)
+#define FLASH_CR2_OPT           7
+#define FLASH_CR2_WPRG          6
+#define FLASH_CR2_ERASE         5
+#define FLASH_CR2_FPRG          4
+#define FLASH_CR2_PRG           0
+#define FLASH_NCR2              _SFR_(0x5C)
+#define FLASH_NCR2_NOPT         7
+#define FLASH_NCR2_NWPRG        6
+#define FLASH_NCR2_NERASE       5
+#define FLASH_NCR2_NFPRG        4
+#define FLASH_NCR2_NPRG         0
+#define FLASH_FPR               _SFR_(0x5D)
+#define FLASH_NFPR              _SFR_(0x5E)
+#define FLASH_IAPSR             _SFR_(0x5F)
+#define FLASH_IAPSR_DUL         3
+#define FLASH_IAPSR_EOP         2
+#define FLASH_IAPSR_PUL         1
+#define FLASH_PUKR              _SFR_(0x62)
+#define FLASH_PUKR_KEY1         0x56
+#define FLASH_PUKR_KEY2         0xAE
+#define FLASH_DUKR              _SFR_(0x64)
+#define FLASH_DUKR_KEY1         FLASH_PUKR_KEY2
+#define FLASH_DUKR_KEY2         FLASH_PUKR_KEY1
+
 /* Clock */
+#define CLK_ICKR                _SFR_(0xC0)
+#define CLK_ECKR                _SFR_(0xC1)
+#define CLK_ECKR_HSERDY         1
+#define CLK_ECKR_HSEEN          0
 #define CLK_CMSR                _SFR_(0xC3)
 #define CLK_SWR                 _SFR_(0xC4)
 #define CLK_SWCR                _SFR_(0xC5)
+#define CLK_SWCR_SWIF           3
+#define CLK_SWCR_SWIEN          2
+#define CLK_SWCR_SWEN           1
+#define CLK_SWCR_SWBSY          0
 #define CLK_CKDIVR              _SFR_(0xC6)
 #define CLK_PCKENR1             _SFR_(0xC7)
 #define CLK_CSSR                _SFR_(0xC8)
