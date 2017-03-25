@@ -2,6 +2,13 @@
 #include <string.h>
 #include <math.h>
 #include <stm8s.h>
+#include <delay.h>
+
+/* Clock output selection CCOSEL[3:0] */
+#define F_CPU_CCO 0b0100
+#define F_LSI_CCO 0b0001
+#define F_HSI_CCO 0b1011
+#define F_HSE_CCO 0b0010
 
 int main() {
     /* Enable HSE crystal oscillator */
@@ -14,8 +21,10 @@ int main() {
     CLK_SWCR |= (1 << CLK_SWCR_SWEN);
 
     /* Clock output on PC4 */
+    PC_DDR |= (1 << 4);
     PC_CR1 |= (1 << 4);
-    CLK_CCOR |= (1 << CLK_CCOR_CCOEN) | (1 << 3);
+    PC_CR2 |= (1 << 4);
+    CLK_CCOR |= (1 << CLK_CCOR_CCOEN) | (F_CPU_CCO << 1);
 
     while (1) {
         // do nothing

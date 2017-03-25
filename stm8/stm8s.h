@@ -223,7 +223,6 @@
 
 /* ADC1 */
 #define ADC1_DB0R               _SFR_(0x3E0)
-
 #define ADC1_CSR                _SFR_(0x400)
 #define ADC1_CSR_EOC            7
 #define ADC1_CSR_AWD            6
