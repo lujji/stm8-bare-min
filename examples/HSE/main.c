@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
 #include <stm8s.h>
-#include <delay.h>
 
 /* Clock output selection CCOSEL[3:0] */
 #define F_CPU_CCO 0b0100

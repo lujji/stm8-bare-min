@@ -1,14 +1,5 @@
-#ifndef FLASH_H
-#define FLASH_H
-
-#include <stdint.h>
-
-/* Access memory by address */
-#define _MEM_(mem_addr)        (*(volatile uint8_t *)(mem_addr))
-
-/* EEPROM */
-#define EEPROM_START_ADDR      0x4000
-#define EEPROM_END_ADDR        0x407F
+#ifndef OPT_H
+#define OPT_H
 
 /* Option bytes */
 #define OPT0                   _MEM_(0x4800)
@@ -23,4 +14,4 @@
 #define OPT5                   _MEM_(0x4809)
 #define NOPT5                  _MEM_(0x480A)
 
-#endif /* FLASH_H */
+#endif /* OPT_H */
