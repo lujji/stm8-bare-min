@@ -1,7 +1,7 @@
 #include <stdint.h>
+#include <stdio.h>
 #include <stm8s.h>
 #include <uart.h>
-#include <stdio.h>
 #include <delay.h>
 
 #define V_REF 3.3
@@ -34,7 +34,7 @@ void main() {
     ADC1_CR2 |= (1 << ADC1_CR2_ALIGN);
 
     /* wake ADC from power down */
-    ADC1_CR1 |= 1 << ADC1_CR1_ADON;
+    ADC1_CR1 |= (1 << ADC1_CR1_ADON);
 
     while (1) {
         uint16_t val = ADC_read();

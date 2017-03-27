@@ -4,7 +4,7 @@
 
 #define OUTPUT_PIN      3
 
-void timer_isr(void) __interrupt(TIM4_ISR) {
+void timer_isr() __interrupt(TIM4_ISR) {
     PD_ODR ^= (1 << OUTPUT_PIN);
     TIM4_SR &= ~(1 << TIM4_SR_UIF);
 }
