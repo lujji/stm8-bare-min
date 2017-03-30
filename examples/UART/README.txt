@@ -1,5 +1,5 @@
-This example demonstrates UART1 functionality. UART is initialized at 9600 baud.
-Baudrate is defined in stm8/uart.h (stable up to 9600 with 2MHz internal oscillator).
+This example demonstrates UART functionality. UART1 is initialized at 9600 @ 8-N-1.
+Baudrate is defined in stm8/uart.h
 
  --------------------
 |                    |
