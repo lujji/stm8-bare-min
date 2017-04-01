@@ -103,9 +103,12 @@
 /* Watchdog */
 #define WWDG_CR                 _SFR_(0xD1)
 #define WWDG_WR                 _SFR_(0xD2)
-#define IWWDG_KR                _SFR_(0xE0)
-#define IWWDG_PR                _SFR_(0xE1)
-#define IWWDG_RLR               _SFR_(0xE2)
+#define IWDG_KR                 _SFR_(0xE0)
+#define IWDG_KEY_ENABLE         0xCC
+#define IWDG_KEY_REFRESH        0xAA
+#define IWDG_KEY_ACCESS         0x55
+#define IWDG_PR                 _SFR_(0xE1)
+#define IWDG_RLR                _SFR_(0xE2)
 
 /* SPI */
 #define SPI_CR1                 _SFR_(0x200)
