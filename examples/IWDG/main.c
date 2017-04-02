@@ -21,7 +21,7 @@ inline void iwdg_refresh() {
     IWDG_KR = IWDG_KEY_REFRESH;
 }
 
-int main() {
+void main() {
     iwdg_enable();
 
     while (1) {

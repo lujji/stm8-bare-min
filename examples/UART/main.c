@@ -20,7 +20,7 @@ char getchar() {
     return uart_read();
 }
 
-int main() {
+void main() {
     uint8_t counter = 0;
     uart_init();
 

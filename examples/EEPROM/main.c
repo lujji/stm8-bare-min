@@ -10,13 +10,25 @@ int putchar(int c) {
     return 0;
 }
 
-int main() {
+inline void eeprom_read(uint16_t addr, uint8_t *buf, int len) {
+    while (len--)
+        *(buf++) = _MEM_(addr++);
+}
+
+void main() {
     const char data[] = "Test string";
     const int len = sizeof (data);
+    uint16_t addr = EEPROM_START_ADDR;
 
     uart_init();
     printf("Writing EEPROM..\n");
-    eeprom_write(EEPROM_START_ADDR, data, len);
+    eeprom_unlock();
+    for (int i = 0; i < len; i++, addr++) {
+        _MEM_(addr) = data[i];
+        /* not necessary on devices with no RWW support */
+        // eeprom_wait_busy();
+    }
+    eeprom_lock();
     printf("Done!\n");
 
     while (1) {

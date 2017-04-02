@@ -67,7 +67,7 @@ void measure() {
     printf("x: %d y: %d z: %d\n", x, y, z);
 }
 
-int main() {
+void main() {
     uint8_t id[3];
     uart_init();
     i2c_init();

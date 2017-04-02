@@ -41,7 +41,7 @@ static inline void flash_busy_wait() {
     while (!(FLASH_IAPSR & (1 << FLASH_IAPSR_EOP)));
 }
 
-int main() {
+void main() {
     uart_init();
     printf("\nID = %d. Data[0] = %d\n", id, data[0]);
 

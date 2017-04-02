@@ -16,7 +16,7 @@ void LCD_draw_sprite(const unsigned char *sprite) {
         LCD_write(*(sprite++));
 }
 
-int main() {
+void main() {
     SPI_init();
     LCD_init();
 

@@ -9,7 +9,7 @@ void timer_isr() __interrupt(TIM4_ISR) {
     TIM4_SR &= ~(1 << TIM4_SR_UIF);
 }
 
-int main() {
+void main() {
     enable_interrupts();
 
     /* Set PD3 as output */

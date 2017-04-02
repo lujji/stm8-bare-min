@@ -12,7 +12,7 @@ int putchar(int c) {
     return 0;
 }
 
-int main() {
+void main() {
     uint8_t counter = 0;
 
     LCD_init();

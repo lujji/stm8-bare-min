@@ -6,7 +6,7 @@
 #define F_HSI_CCO 0b1011
 #define F_HSE_CCO 0b0010
 
-int main() {
+void main() {
     /* Enable HSE crystal oscillator */
     CLK_ECKR |= (1 << CLK_ECKR_HSEEN);
     while (!(CLK_ECKR & (1 << CLK_ECKR_HSERDY)));

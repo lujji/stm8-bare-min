@@ -54,7 +54,7 @@ void LCD_puts(char *str) {
         LCD_putc(*str++);
 }
 
-int main() {
+void main() {
     LCD_init();
     i2c_init();
     MMA8452_init();
