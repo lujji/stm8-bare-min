@@ -3,7 +3,9 @@
 
 #include <stdint.h>
 
-#define BAUDRATE 9600
+#ifndef BAUDRATE
+#define BAUDRATE 115200
+#endif
 
 #ifndef F_CPU
 #warning "F_CPU not defined, using 2MHz by default"

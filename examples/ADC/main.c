@@ -17,7 +17,7 @@ int putchar(int c) {
 uint16_t ADC_read() {
     uint8_t adcH, adcL;
     ADC1_CR1 |= (1 << ADC1_CR1_ADON);
-    while(!(ADC1_CSR & (1 << ADC1_CSR_EOC)));
+    while (!(ADC1_CSR & (1 << ADC1_CSR_EOC)));
     adcL = ADC1_DRL;
     adcH = ADC1_DRH;
     ADC1_CSR &= ~(1 << ADC1_CSR_EOC); // clear EOC flag
