@@ -14,15 +14,9 @@ static void (*uart_puts)(uint8_t *str);
  * Get RAM0 and RAM1 section length and store them in
  * RAM0_len and RAM1_len respectively
  */
-static void get_ram_sections_length() {
-    __asm
-        push a
-        ld a, #l_RAM0
-        ld _RAM0_len, a
-        ld a, #l_RAM1
-        ld _RAM1_len, a
-        pop a
-    __endasm;
+inline void get_ram_sections_length() {
+    __asm__("mov _RAM0_len, #l_RAM0");
+    __asm__("mov _RAM1_len, #l_RAM1");
 }
 
 /**
