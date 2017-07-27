@@ -16,10 +16,9 @@ _increment_by_2:
     ret
 
 _fast_memcpy:
-    dest = 0x03 + 1
-    src  = 0x05 + 1
-    len  = 0x07 + 1
-    push a
+    dest = 0x03
+    src  = 0x05
+    len  = 0x07
     ldw x, (dest, sp)
     ldw y, (src, sp)
 loop0$:
@@ -35,5 +34,4 @@ loop0$:
     dec (len, sp)
     jra loop0$
 loop0_end$:
-    pop a
     ret
