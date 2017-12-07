@@ -15,7 +15,7 @@ void i2c_start() {
 
 void i2c_stop() {
     I2C_CR2 |= (1 << I2C_CR2_STOP);
-    while (!(I2C_SR3 & (1 << I2C_SR3_MSL)));
+    while (I2C_SR3 & (1 << I2C_SR3_MSL));
 }
 
 void i2c_write(uint8_t data) {

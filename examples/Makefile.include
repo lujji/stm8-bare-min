@@ -39,7 +39,8 @@ $(TARGET): $(OBJS)
 
 size:
 	@$(OBJCOPY) -I ihex --output-target=binary $(TARGET) $(TARGET).bin
-	@echo "----------\nImage size:"
+	@echo "----------"
+	@echo "Image size:"
 	@stat -L -c %s $(TARGET).bin
 
 flash: $(TARGET)
