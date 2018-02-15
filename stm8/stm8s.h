@@ -5,6 +5,7 @@
 
 #define _MEM_(mem_addr)         (*(volatile uint8_t *)(mem_addr))
 #define _SFR_(mem_addr)         (*(volatile uint8_t *)(0x5000 + (mem_addr)))
+#define _SFR16_(mem_addr)       (*(volatile uint16_t *)(0x5000 + (mem_addr)))
 
 /* PORT A */
 #define PA_ODR                  _SFR_(0x00)
@@ -78,6 +79,13 @@
 #define FLASH_DUKR              _SFR_(0x64)
 #define FLASH_DUKR_KEY1         FLASH_PUKR_KEY2
 #define FLASH_DUKR_KEY2         FLASH_PUKR_KEY1
+
+/* ITC */
+#define EXTI_CR1                _SFR_(0xA0)
+#define EXTI_CR2                _SFR_(0xA1)
+
+/* RST */
+#define RST_SR                  _SFR_(0xB3)
 
 /* Clock */
 #define CLK_ICKR                _SFR_(0xC0)
@@ -211,10 +219,47 @@
 #define UART2_GTR               _SFR_(0x24A)
 #define UART2_PSCR              _SFR_(0x24B)
 
+/* TIM2 */
+#define TIM2_CR1                _SFR_(0x300)
+#define TIM2_CR1_ARPE           7
+#define TIM2_CR1_OPM            3
+#define TIM2_CR1_URS            2
+#define TIM2_CR1_UDIS           1
+#define TIM2_CR1_CEN            0
+#define TIM2_IER                _SFR_(0x303)
+#define TIM2_SR1                _SFR_(0x304)
+#define TIM2_SR2                _SFR_(0x305)
+#define TIM2_EGR                _SFR_(0x306)
+#define TIM2_EGR_TG             6
+#define TIM2_EGR_CC3G           3
+#define TIM2_EGR_CC2G           2
+#define TIM2_EGR_CC1G           1
+#define TIM2_EGR_UG             0
+#define TIM2_CCMR1              _SFR_(0x307)
+#define TIM2_CCMR2              _SFR_(0x308)
+#define TIM2_CCMR3              _SFR_(0x309)
+#define TIM2_CCER1              _SFR_(0x30A)
+#define TIM2_CCER2              _SFR_(0x30B)
+#define TIM2_CNTR               _SFR16_(0x30C)
+#define TIM2_CNTRH              _SFR_(0x30C)
+#define TIM2_CNTRL              _SFR_(0x30D)
+#define TIM2_PSCR               _SFR_(0x30E)
+#define TIM2_ARR                _SFR16_(0x30F)
+#define TIM2_ARRH               _SFR_(0x30F)
+#define TIM2_ARRL               _SFR_(0x310)
+#define TIM2_CCR1H              _SFR_(0x311)
+#define TIM2_CCR1L              _SFR_(0x312)
+#define TIM2_CCR2H              _SFR_(0x313)
+#define TIM2_CCR2L              _SFR_(0x314)
+#define TIM2_CCR3H              _SFR_(0x315)
+#define TIM2_CCR3L              _SFR_(0x316)
+
 /* TIM4 */
 #define TIM4_CR1                _SFR_(0x340)
 #define TIM4_CR1_ARPE           7
+#define TIM4_CR1_OPM            3
 #define TIM4_CR1_URS            2
+#define TIM4_CR1_UDIS           1
 #define TIM4_CR1_CEN            0
 #define TIM4_IER                _SFR_(0x343)
 #define TIM4_IER_UIE            0
@@ -283,6 +328,9 @@
 #define ADC1_ISR                22
 #define TIM4_ISR                23
 #define FLASH_ISR               24
+
+/* CPU */
+#define CPU_CCR                 _MEM_(0x7F0A)
 
 #define enable_interrupts()     __asm__("rim");
 #define disable_interrupts()    __asm__("sim");
