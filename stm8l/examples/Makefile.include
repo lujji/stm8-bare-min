@@ -1,12 +1,12 @@
 export PATH := $(PATH):$(HOME)/local/sdcc/bin
 
-MCU  = stm8s003f3
+MCU  = stm8l051f3
 ARCH = stm8
 
 F_CPU   ?= 2000000
 TARGET  ?= main.ihx
 
-LIBDIR   = ../../stm8
+LIBDIR   = ../../lib
 
 SRCS    := $(wildcard *.c $(LIBDIR)/*.c)
 ASRCS   := $(wildcard *.s $(LIBDIR)/*.s)
