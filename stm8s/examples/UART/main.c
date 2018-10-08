@@ -16,7 +16,7 @@ int putchar(int c) {
 /*
  * Redirect stdin to UART
  */
-char getchar() {
+int getchar() {
     return uart_read();
 }
 
