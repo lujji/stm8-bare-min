@@ -34,8 +34,8 @@ static void ram_cpy() {
 }
 
 void main() {
-    PD_DDR |= (1 << 4);
-    PD_CR1 |= (1 << 4);
+    LED_DDR |= (1 << LED_PIN);
+    LED_CR1 |= (1 << LED_PIN);
     uart_init();
     ram_cpy();
 

@@ -48,6 +48,9 @@ size:
 flash: $(TARGET)
 	stm8flash -c stlinkv2 -p $(MCU) -w $(TARGET)
 
+serial: $(TARGET)
+	stm8gal -p /dev/ttyUSB0 -w $(TARGET)
+
 clean:
 	rm -f *.map *.asm *.rel *.ihx *.o *.sym *.lk *.lst *.rst *.cdb *.bin
 
