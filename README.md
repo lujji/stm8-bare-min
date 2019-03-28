@@ -20,5 +20,5 @@ make flash
 ```
 Uncomment `--peep-file $(LIBDIR)/util/extra.def` option in the Makefile to enable additional optimizer rules.
 
-## Bugs
-Due to SDCC [Bug #2673](https://sourceforge.net/p/sdcc/bugs/2673/) it is recommended to compile with `--nolospre` flag.
+## SDCC Bugs
+To avoid Bug [#2673](https://sourceforge.net/p/sdcc/bugs/2673/) it is recommended to use a recent (>=3.8) version of SDCC or to compile with `--nolospre` flag.
