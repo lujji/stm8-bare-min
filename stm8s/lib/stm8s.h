@@ -123,6 +123,12 @@
 /* Clock */
 #define CLK_BASE_ADDRESS        0x50C0
 #define CLK_ICKR                _SFR_(CLK_BASE_ADDRESS + 0x00)
+#define CLK_ICKR_REGAH          5
+#define CLK_ICKR_LSIRDY         4
+#define CLK_ICKR_LSIEN          3
+#define CLK_ICKR_FHW            2
+#define CLK_ICKR_HSIRDY         1
+#define CLK_ICKR_HSIEN          0
 #define CLK_ECKR                _SFR_(CLK_BASE_ADDRESS + 0x01)
 #define CLK_ECKR_HSERDY         1
 #define CLK_ECKR_HSEEN          0
