@@ -159,6 +159,9 @@
 /* Auto-Wakeup */
 #define AWU_BASE_ADDRESS        0x50F0
 #define AWU_CSR                 _SFR_(AWU_BASE_ADDRESS + 0x00)
+#define AWU_CSR_AWUF            5
+#define AWU_CSR_AWUEN           4
+#define AWU_CSR_MSR             0
 #define AWU_APR                 _SFR_(AWU_BASE_ADDRESS + 0x01)
 #define AWU_TBR                 _SFR_(AWU_BASE_ADDRESS + 0x02)
 
