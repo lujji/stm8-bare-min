@@ -658,5 +658,6 @@
 #define enable_interrupts()     __asm__("rim");
 #define disable_interrupts()    __asm__("sim");
 #define nop()                   __asm__("nop");
+#define halt()                  __asm__("halt");
 
 #endif /* STM8S_H */
