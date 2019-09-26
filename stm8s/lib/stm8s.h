@@ -359,7 +359,7 @@
 #define TIM1_OISR               _SFR_(TIM1_BASE_ADDRESS + 0x1F)
 
 /* TIM2 (mutually exclusive with TIM5) */
-#define TIM2_BASE_ADDRESS       5300
+#define TIM2_BASE_ADDRESS       0x5300
 #define TIM2_CR1                _SFR_(TIM2_BASE_ADDRESS + 0x00)
 #define TIM2_CR1_ARPE           7
 #define TIM2_CR1_OPM            3
@@ -447,7 +447,7 @@
 #define TIM4_ARR                _SFR_(TIM4_BASE_ADDRESS + 0x08)
 
 /* TIM5 (mutually exclusive with TIM2) */
-#define TIM5_BASE_ADDRESS       5300
+#define TIM5_BASE_ADDRESS       0x5300
 #define TIM5_CR1                _SFR_(TIM5_BASE_ADDRESS + 0x00)
 #define TIM5_CR1_ARPE           7
 #define TIM5_CR1_OPM            3
