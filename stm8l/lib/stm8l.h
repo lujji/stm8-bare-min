@@ -846,7 +846,7 @@
 #define I2C1_ISR                        29
 
 /* CPU */
-#define CPU_CCR                         _MEM_(0x7F60)
+#define CFG_GCR                         _MEM_(0x7F60)
 #define ITC_SPR1                        _MEM_(0x7F70)
 #define ITC_SPR2                        _MEM_(0x7F71)
 #define ITC_SPR3                        _MEM_(0x7F72)
