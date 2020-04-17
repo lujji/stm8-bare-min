@@ -211,34 +211,92 @@
 /* I2C */
 #define I2C_BASE_ADDRESS        0x5210
 #define I2C_CR1                 _SFR_(I2C_BASE_ADDRESS + 0x00)
+#define I2C_CR1_NOSTRETCH       7
+#define I2C_CR1_ENGC            6
 #define I2C_CR1_PE              0
 #define I2C_CR2                 _SFR_(I2C_BASE_ADDRESS + 0x01)
+#define I2C_CR2_SWRST           7
+#define I2C_CR2_POS             3
 #define I2C_CR2_ACK             2
 #define I2C_CR2_STOP            1
 #define I2C_CR2_START           0
 #define I2C_FREQR               _SFR_(I2C_BASE_ADDRESS + 0x02)
+#define I2C_FREQR_FREQ5         5
+#define I2C_FREQR_FREQ4         4
+#define I2C_FREQR_FREQ3         3
 #define I2C_FREQR_FREQ2         2
 #define I2C_FREQR_FREQ1         1
 #define I2C_FREQR_FREQ0         0
 #define I2C_OARL                _SFR_(I2C_BASE_ADDRESS + 0x03)
+#define I2C_OARL_ADD7           7
+#define I2C_OARL_ADD6           6
+#define I2C_OARL_ADD5           5
+#define I2C_OARL_ADD4           4
+#define I2C_OARL_ADD3           3
+#define I2C_OARL_ADD2           2
+#define I2C_OARL_ADD1           1
+#define I2C_OARL_ADD0           0
 #define I2C_OARH                _SFR_(I2C_BASE_ADDRESS + 0x04)
 #define I2C_OARH_ADDMODE        7
 #define I2C_OARH_ADDCONF        6
+#define I2C_OARH_ADD9           2
+#define I2C_OARH_ADD8           1
 #define I2C_DR                  _SFR_(I2C_BASE_ADDRESS + 0x06)
+#define I2C_DR_DR7              7
+#define I2C_DR_DR6              6
+#define I2C_DR_DR5              5
+#define I2C_DR_DR4              4
+#define I2C_DR_DR3              3
+#define I2C_DR_DR2              2
+#define I2C_DR_DR1              1
+#define I2C_DR_DR0              0
 #define I2C_SR1                 _SFR_(I2C_BASE_ADDRESS + 0x07)
 #define I2C_SR1_TXE             7
 #define I2C_SR1_RXNE            6
+#define I2C_SR1_STOPF           4
+#define I2C_SR1_ADD10           3
 #define I2C_SR1_BTF             2
 #define I2C_SR1_ADDR            1
 #define I2C_SR1_SB              0
 #define I2C_SR2                 _SFR_(I2C_BASE_ADDRESS + 0x08)
+#define I2C_SR2_WUFH            5
+#define I2C_SR2_OVR             3
+#define I2C_SR2_AF              2
+#define I2C_SR2_ARLO            1
+#define I2C_SR2_BERR            0
 #define I2C_SR3                 _SFR_(I2C_BASE_ADDRESS + 0x09)
+#define I2C_SR3_DUALF           7
+#define I2C_SR3_GENCALL         4
+#define I2C_SR3_TRA             2
 #define I2C_SR3_BUSY            1
 #define I2C_SR3_MSL             0
 #define I2C_ITR                 _SFR_(I2C_BASE_ADDRESS + 0x0A)
+#define I2C_ITR_ITBUFEN         2
+#define I2C_ITR_ITEVTEN         1
+#define I2C_ITR_ITERREN         0
 #define I2C_CCRL                _SFR_(I2C_BASE_ADDRESS + 0x0B)
+#define I2C_CCRL_CCR7           7
+#define I2C_CCRL_CCR6           6
+#define I2C_CCRL_CCR5           5
+#define I2C_CCRL_CCR4           4
+#define I2C_CCRL_CCR3           3
+#define I2C_CCRL_CCR2           2
+#define I2C_CCRL_CCR1           1
+#define I2C_CCRL_CCR0           0
 #define I2C_CCRH                _SFR_(I2C_BASE_ADDRESS + 0x0C)
+#define I2C_CCRH_FS             7
+#define I2C_CCRH_DUTY           6
+#define I2C_CCRH_CCR11          3
+#define I2C_CCRH_CCR10          2
+#define I2C_CCRH_CCR9           1
+#define I2C_CCRH_CCR8           0
 #define I2C_TRISER              _SFR_(I2C_BASE_ADDRESS + 0x0D)
+#define I2C_TRISER_TRISE5       5
+#define I2C_TRISER_TRISE4       4
+#define I2C_TRISER_TRISE3       3
+#define I2C_TRISER_TRISE2       2
+#define I2C_TRISER_TRISE1       1
+#define I2C_TRISER_TRISE0       0
 #define I2C_PECR                _SFR_(I2C_BASE_ADDRESS + 0x0E)
 
 /* UART1 (mutually exclusive with UART4) */
