@@ -10,74 +10,434 @@
 /* PORT A */
 #define PA_BASE_ADDRESS         0x5000
 #define PA_ODR                  _SFR_(PA_BASE_ADDRESS + 0x00)
+#define PA_ODR_ODR7             7
+#define PA_ODR_ODR6             6
+#define PA_ODR_ODR5             5
+#define PA_ODR_ODR4             4
+#define PA_ODR_ODR3             3
+#define PA_ODR_ODR2             2
+#define PA_ODR_ODR1             1
+#define PA_ODR_ODR0             0
 #define PA_IDR                  _SFR_(PA_BASE_ADDRESS + 0x01)
+#define PA_IDR_IDR7             7
+#define PA_IDR_IDR6             6
+#define PA_IDR_IDR5             5
+#define PA_IDR_IDR4             4
+#define PA_IDR_IDR3             3
+#define PA_IDR_IDR2             2
+#define PA_IDR_IDR1             1
+#define PA_IDR_IDR0             0
 #define PA_DDR                  _SFR_(PA_BASE_ADDRESS + 0x02)
+#define PA_DDR_DDR7             7
+#define PA_DDR_DDR6             6
+#define PA_DDR_DDR5             5
+#define PA_DDR_DDR4             4
+#define PA_DDR_DDR3             3
+#define PA_DDR_DDR2             2
+#define PA_DDR_DDR1             1
+#define PA_DDR_DDR0             0
 #define PA_CR1                  _SFR_(PA_BASE_ADDRESS + 0x03)
+#define PA_CR1_C17              7
+#define PA_CR1_C16              6
+#define PA_CR1_C15              5
+#define PA_CR1_C14              4
+#define PA_CR1_C13              3
+#define PA_CR1_C12              2
+#define PA_CR1_C11              1
+#define PA_CR1_C10              0
 #define PA_CR2                  _SFR_(PA_BASE_ADDRESS + 0x04)
+#define PA_CR2_C27              7
+#define PA_CR2_C26              6
+#define PA_CR2_C25              5
+#define PA_CR2_C24              4
+#define PA_CR2_C23              3
+#define PA_CR2_C22              2
+#define PA_CR2_C21              1
+#define PA_CR2_C20              0
 
 /* PORT B */
 #define PB_BASE_ADDRESS         0x5005
 #define PB_ODR                  _SFR_(PB_BASE_ADDRESS + 0x00)
+#define PB_ODR_ODR7             7
+#define PB_ODR_ODR6             6
+#define PB_ODR_ODR5             5
+#define PB_ODR_ODR4             4
+#define PB_ODR_ODR3             3
+#define PB_ODR_ODR2             2
+#define PB_ODR_ODR1             1
+#define PB_ODR_ODR0             0
 #define PB_IDR                  _SFR_(PB_BASE_ADDRESS + 0x01)
+#define PB_IDR_IDR7             7
+#define PB_IDR_IDR6             6
+#define PB_IDR_IDR5             5
+#define PB_IDR_IDR4             4
+#define PB_IDR_IDR3             3
+#define PB_IDR_IDR2             2
+#define PB_IDR_IDR1             1
+#define PB_IDR_IDR0             0
 #define PB_DDR                  _SFR_(PB_BASE_ADDRESS + 0x02)
+#define PB_DDR_DDR7             7
+#define PB_DDR_DDR6             6
+#define PB_DDR_DDR5             5
+#define PB_DDR_DDR4             4
+#define PB_DDR_DDR3             3
+#define PB_DDR_DDR2             2
+#define PB_DDR_DDR1             1
+#define PB_DDR_DDR0             0
 #define PB_CR1                  _SFR_(PB_BASE_ADDRESS + 0x03)
+#define PB_CR1_C17              7
+#define PB_CR1_C16              6
+#define PB_CR1_C15              5
+#define PB_CR1_C14              4
+#define PB_CR1_C13              3
+#define PB_CR1_C12              2
+#define PB_CR1_C11              1
+#define PB_CR1_C10              0
 #define PB_CR2                  _SFR_(PB_BASE_ADDRESS + 0x04)
+#define PB_CR2_C27              7
+#define PB_CR2_C26              6
+#define PB_CR2_C25              5
+#define PB_CR2_C24              4
+#define PB_CR2_C23              3
+#define PB_CR2_C22              2
+#define PB_CR2_C21              1
+#define PB_CR2_C20              0
 
 /* PORT C */
 #define PC_BASE_ADDRESS         0x500A
 #define PC_ODR                  _SFR_(PC_BASE_ADDRESS + 0x00)
+#define PC_ODR_ODR7             7
+#define PC_ODR_ODR6             6
+#define PC_ODR_ODR5             5
+#define PC_ODR_ODR4             4
+#define PC_ODR_ODR3             3
+#define PC_ODR_ODR2             2
+#define PC_ODR_ODR1             1
+#define PC_ODR_ODR0             0
 #define PC_IDR                  _SFR_(PC_BASE_ADDRESS + 0x01)
+#define PC_IDR_IDR7             7
+#define PC_IDR_IDR6             6
+#define PC_IDR_IDR5             5
+#define PC_IDR_IDR4             4
+#define PC_IDR_IDR3             3
+#define PC_IDR_IDR2             2
+#define PC_IDR_IDR1             1
+#define PC_IDR_IDR0             0
 #define PC_DDR                  _SFR_(PC_BASE_ADDRESS + 0x02)
+#define PC_DDR_DDR7             7
+#define PC_DDR_DDR6             6
+#define PC_DDR_DDR5             5
+#define PC_DDR_DDR4             4
+#define PC_DDR_DDR3             3
+#define PC_DDR_DDR2             2
+#define PC_DDR_DDR1             1
+#define PC_DDR_DDR0             0
 #define PC_CR1                  _SFR_(PC_BASE_ADDRESS + 0x03)
+#define PC_CR1_C17              7
+#define PC_CR1_C16              6
+#define PC_CR1_C15              5
+#define PC_CR1_C14              4
+#define PC_CR1_C13              3
+#define PC_CR1_C12              2
+#define PC_CR1_C11              1
+#define PC_CR1_C10              0
 #define PC_CR2                  _SFR_(PC_BASE_ADDRESS + 0x04)
+#define PC_CR2_C27              7
+#define PC_CR2_C26              6
+#define PC_CR2_C25              5
+#define PC_CR2_C24              4
+#define PC_CR2_C23              3
+#define PC_CR2_C22              2
+#define PC_CR2_C21              1
+#define PC_CR2_C20              0
 
 /* PORT D */
 #define PD_BASE_ADDRESS         0x500F
 #define PD_ODR                  _SFR_(PD_BASE_ADDRESS + 0x00)
+#define PD_ODR_ODR7             7
+#define PD_ODR_ODR6             6
+#define PD_ODR_ODR5             5
+#define PD_ODR_ODR4             4
+#define PD_ODR_ODR3             3
+#define PD_ODR_ODR2             2
+#define PD_ODR_ODR1             1
+#define PD_ODR_ODR0             0
 #define PD_IDR                  _SFR_(PD_BASE_ADDRESS + 0x01)
+#define PD_IDR_IDR7             7
+#define PD_IDR_IDR6             6
+#define PD_IDR_IDR5             5
+#define PD_IDR_IDR4             4
+#define PD_IDR_IDR3             3
+#define PD_IDR_IDR2             2
+#define PD_IDR_IDR1             1
+#define PD_IDR_IDR0             0
 #define PD_DDR                  _SFR_(PD_BASE_ADDRESS + 0x02)
+#define PD_DDR_DDR7             7
+#define PD_DDR_DDR6             6
+#define PD_DDR_DDR5             5
+#define PD_DDR_DDR4             4
+#define PD_DDR_DDR3             3
+#define PD_DDR_DDR2             2
+#define PD_DDR_DDR1             1
+#define PD_DDR_DDR0             0
 #define PD_CR1                  _SFR_(PD_BASE_ADDRESS + 0x03)
+#define PD_CR1_C17              7
+#define PD_CR1_C16              6
+#define PD_CR1_C15              5
+#define PD_CR1_C14              4
+#define PD_CR1_C13              3
+#define PD_CR1_C12              2
+#define PD_CR1_C11              1
+#define PD_CR1_C10              0
 #define PD_CR2                  _SFR_(PD_BASE_ADDRESS + 0x04)
+#define PD_CR2_C27              7
+#define PD_CR2_C26              6
+#define PD_CR2_C25              5
+#define PD_CR2_C24              4
+#define PD_CR2_C23              3
+#define PD_CR2_C22              2
+#define PD_CR2_C21              1
+#define PD_CR2_C20              0
 
 /* PORT E */
 #define PE_BASE_ADDRESS         0x5014
 #define PE_ODR                  _SFR_(PE_BASE_ADDRESS + 0x00)
+#define PE_ODR_ODR7             7
+#define PE_ODR_ODR6             6
+#define PE_ODR_ODR5             5
+#define PE_ODR_ODR4             4
+#define PE_ODR_ODR3             3
+#define PE_ODR_ODR2             2
+#define PE_ODR_ODR1             1
+#define PE_ODR_ODR0             0
 #define PE_IDR                  _SFR_(PE_BASE_ADDRESS + 0x01)
+#define PE_IDR_IDR7             7
+#define PE_IDR_IDR6             6
+#define PE_IDR_IDR5             5
+#define PE_IDR_IDR4             4
+#define PE_IDR_IDR3             3
+#define PE_IDR_IDR2             2
+#define PE_IDR_IDR1             1
+#define PE_IDR_IDR0             0
 #define PE_DDR                  _SFR_(PE_BASE_ADDRESS + 0x02)
+#define PE_DDR_DDR7             7
+#define PE_DDR_DDR6             6
+#define PE_DDR_DDR5             5
+#define PE_DDR_DDR4             4
+#define PE_DDR_DDR3             3
+#define PE_DDR_DDR2             2
+#define PE_DDR_DDR1             1
+#define PE_DDR_DDR0             0
 #define PE_CR1                  _SFR_(PE_BASE_ADDRESS + 0x03)
+#define PE_CR1_C17              7
+#define PE_CR1_C16              6
+#define PE_CR1_C15              5
+#define PE_CR1_C14              4
+#define PE_CR1_C13              3
+#define PE_CR1_C12              2
+#define PE_CR1_C11              1
+#define PE_CR1_C10              0
 #define PE_CR2                  _SFR_(PE_BASE_ADDRESS + 0x04)
+#define PE_CR2_C27              7
+#define PE_CR2_C26              6
+#define PE_CR2_C25              5
+#define PE_CR2_C24              4
+#define PE_CR2_C23              3
+#define PE_CR2_C22              2
+#define PE_CR2_C21              1
+#define PE_CR2_C20              0
 
 /* PORT F */
 #define PF_BASE_ADDRESS         0x5019
 #define PF_ODR                  _SFR_(PF_BASE_ADDRESS + 0x00)
+#define PF_ODR_ODR7             7
+#define PF_ODR_ODR6             6
+#define PF_ODR_ODR5             5
+#define PF_ODR_ODR4             4
+#define PF_ODR_ODR3             3
+#define PF_ODR_ODR2             2
+#define PF_ODR_ODR1             1
+#define PF_ODR_ODR0             0
 #define PF_IDR                  _SFR_(PF_BASE_ADDRESS + 0x01)
+#define PF_IDR_IDR7             7
+#define PF_IDR_IDR6             6
+#define PF_IDR_IDR5             5
+#define PF_IDR_IDR4             4
+#define PF_IDR_IDR3             3
+#define PF_IDR_IDR2             2
+#define PF_IDR_IDR1             1
+#define PF_IDR_IDR0             0
 #define PF_DDR                  _SFR_(PF_BASE_ADDRESS + 0x02)
+#define PF_DDR_DDR7             7
+#define PF_DDR_DDR6             6
+#define PF_DDR_DDR5             5
+#define PF_DDR_DDR4             4
+#define PF_DDR_DDR3             3
+#define PF_DDR_DDR2             2
+#define PF_DDR_DDR1             1
+#define PF_DDR_DDR0             0
 #define PF_CR1                  _SFR_(PF_BASE_ADDRESS + 0x03)
+#define PF_CR1_C17              7
+#define PF_CR1_C16              6
+#define PF_CR1_C15              5
+#define PF_CR1_C14              4
+#define PF_CR1_C13              3
+#define PF_CR1_C12              2
+#define PF_CR1_C11              1
+#define PF_CR1_C10              0
 #define PF_CR2                  _SFR_(PF_BASE_ADDRESS + 0x04)
+#define PF_CR2_C27              7
+#define PF_CR2_C26              6
+#define PF_CR2_C25              5
+#define PF_CR2_C24              4
+#define PF_CR2_C23              3
+#define PF_CR2_C22              2
+#define PF_CR2_C21              1
+#define PF_CR2_C20              0
 
 /* PORT G */
 #define PG_BASE_ADDRESS         0x501E
 #define PG_ODR                  _SFR_(PG_BASE_ADDRESS + 0x00)
+#define PG_ODR_ODR7             7
+#define PG_ODR_ODR6             6
+#define PG_ODR_ODR5             5
+#define PG_ODR_ODR4             4
+#define PG_ODR_ODR3             3
+#define PG_ODR_ODR2             2
+#define PG_ODR_ODR1             1
+#define PG_ODR_ODR0             0
 #define PG_IDR                  _SFR_(PG_BASE_ADDRESS + 0x01)
+#define PG_IDR_IDR7             7
+#define PG_IDR_IDR6             6
+#define PG_IDR_IDR5             5
+#define PG_IDR_IDR4             4
+#define PG_IDR_IDR3             3
+#define PG_IDR_IDR2             2
+#define PG_IDR_IDR1             1
+#define PG_IDR_IDR0             0
 #define PG_DDR                  _SFR_(PG_BASE_ADDRESS + 0x02)
+#define PG_DDR_DDR7             7
+#define PG_DDR_DDR6             6
+#define PG_DDR_DDR5             5
+#define PG_DDR_DDR4             4
+#define PG_DDR_DDR3             3
+#define PG_DDR_DDR2             2
+#define PG_DDR_DDR1             1
+#define PG_DDR_DDR0             0
 #define PG_CR1                  _SFR_(PG_BASE_ADDRESS + 0x03)
+#define PG_CR1_C17              7
+#define PG_CR1_C16              6
+#define PG_CR1_C15              5
+#define PG_CR1_C14              4
+#define PG_CR1_C13              3
+#define PG_CR1_C12              2
+#define PG_CR1_C11              1
+#define PG_CR1_C10              0
 #define PG_CR2                  _SFR_(PG_BASE_ADDRESS + 0x04)
+#define PG_CR2_C27              7
+#define PG_CR2_C26              6
+#define PG_CR2_C25              5
+#define PG_CR2_C24              4
+#define PG_CR2_C23              3
+#define PG_CR2_C22              2
+#define PG_CR2_C21              1
+#define PG_CR2_C20              0
 
 /* PORT H */
 #define PH_BASE_ADDRESS         0x5023
 #define PH_ODR                  _SFR_(PH_BASE_ADDRESS + 0x00)
+#define PH_ODR_ODR7             7
+#define PH_ODR_ODR6             6
+#define PH_ODR_ODR5             5
+#define PH_ODR_ODR4             4
+#define PH_ODR_ODR3             3
+#define PH_ODR_ODR2             2
+#define PH_ODR_ODR1             1
+#define PH_ODR_ODR0             0
 #define PH_IDR                  _SFR_(PH_BASE_ADDRESS + 0x01)
+#define PH_IDR_IDR7             7
+#define PH_IDR_IDR6             6
+#define PH_IDR_IDR5             5
+#define PH_IDR_IDR4             4
+#define PH_IDR_IDR3             3
+#define PH_IDR_IDR2             2
+#define PH_IDR_IDR1             1
+#define PH_IDR_IDR0             0
 #define PH_DDR                  _SFR_(PH_BASE_ADDRESS + 0x02)
+#define PH_DDR_DDR7             7
+#define PH_DDR_DDR6             6
+#define PH_DDR_DDR5             5
+#define PH_DDR_DDR4             4
+#define PH_DDR_DDR3             3
+#define PH_DDR_DDR2             2
+#define PH_DDR_DDR1             1
+#define PH_DDR_DDR0             0
 #define PH_CR1                  _SFR_(PH_BASE_ADDRESS + 0x03)
+#define PH_CR1_C17              7
+#define PH_CR1_C16              6
+#define PH_CR1_C15              5
+#define PH_CR1_C14              4
+#define PH_CR1_C13              3
+#define PH_CR1_C12              2
+#define PH_CR1_C11              1
+#define PH_CR1_C10              0
 #define PH_CR2                  _SFR_(PH_BASE_ADDRESS + 0x04)
+#define PH_CR2_C27              7
+#define PH_CR2_C26              6
+#define PH_CR2_C25              5
+#define PH_CR2_C24              4
+#define PH_CR2_C23              3
+#define PH_CR2_C22              2
+#define PH_CR2_C21              1
+#define PH_CR2_C20              0
 
 /* PORT I */
 #define PI_BASE_ADDRESS         0x5028
 #define PI_ODR                  _SFR_(PI_BASE_ADDRESS + 0x00)
+#define PI_ODR_ODR7             7
+#define PI_ODR_ODR6             6
+#define PI_ODR_ODR5             5
+#define PI_ODR_ODR4             4
+#define PI_ODR_ODR3             3
+#define PI_ODR_ODR2             2
+#define PI_ODR_ODR1             1
+#define PI_ODR_ODR0             0
 #define PI_IDR                  _SFR_(PI_BASE_ADDRESS + 0x01)
+#define PI_IDR_IDR7             7
+#define PI_IDR_IDR6             6
+#define PI_IDR_IDR5             5
+#define PI_IDR_IDR4             4
+#define PI_IDR_IDR3             3
+#define PI_IDR_IDR2             2
+#define PI_IDR_IDR1             1
+#define PI_IDR_IDR0             0
 #define PI_DDR                  _SFR_(PI_BASE_ADDRESS + 0x02)
+#define PI_DDR_DDR7             7
+#define PI_DDR_DDR6             6
+#define PI_DDR_DDR5             5
+#define PI_DDR_DDR4             4
+#define PI_DDR_DDR3             3
+#define PI_DDR_DDR2             2
+#define PI_DDR_DDR1             1
+#define PI_DDR_DDR0             0
 #define PI_CR1                  _SFR_(PI_BASE_ADDRESS + 0x03)
+#define PI_CR1_C17              7
+#define PI_CR1_C16              6
+#define PI_CR1_C15              5
+#define PI_CR1_C14              4
+#define PI_CR1_C13              3
+#define PI_CR1_C12              2
+#define PI_CR1_C11              1
+#define PI_CR1_C10              0
 #define PI_CR2                  _SFR_(PI_BASE_ADDRESS + 0x04)
+#define PI_CR2_C27              7
+#define PI_CR2_C26              6
+#define PI_CR2_C25              5
+#define PI_CR2_C24              4
+#define PI_CR2_C23              3
+#define PI_CR2_C22              2
+#define PI_CR2_C21              1
+#define PI_CR2_C20              0
 
 /* Flash */
 #define FLASH_BASE_ADDRESS      0x505A
