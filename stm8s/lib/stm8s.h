@@ -3,9 +3,13 @@
 
 #include <stdint.h>
 
-#define _MEM_(mem_addr)      (*(volatile uint8_t *)(mem_addr))
-#define _SFR_(mem_addr)      (*(volatile uint8_t *)((mem_addr)))
-#define _SFR16_(mem_addr)    (*(volatile uint16_t *)((mem_addr)))
+#ifndef  _BV
+# define _BV(bit)               (1 << (bit))
+#endif
+
+#define _MEM_(mem_addr)         (*(volatile uint8_t *)(mem_addr))
+#define _SFR_(mem_addr)         (*(volatile uint8_t *)((mem_addr)))
+#define _SFR16_(mem_addr)       (*(volatile uint16_t *)((mem_addr)))
 
 /* PORT A */
 #define PA_BASE_ADDRESS         0x5000
