@@ -1085,4 +1085,11 @@
 #define halt()                  __asm__("halt")
 #define wfi()                   __asm__("wfi")
 
+/*  Configure STM8S001J3 nc pins to push-pull output state. Recommendation of DS12129 Rev.3 pg.23.
+    Should be call first in main(). */
+#define stm8s001j3_config_unused_pins()   { PA_DDR = 0x04; PB_DDR = 0xCF; PC_DDR = 0x86; \
+                                            PD_DDR = 0x95; PE_DDR = 0x20; PF_DDR = 0x10; \
+                                            PA_CR1 = 0x04; PB_CR1 = 0xCF; PC_CR1 = 0x86; \
+                                            PD_CR1 = 0x97; PE_CR1 = 0x20; PF_CR1 = 0x10; }
+
 #endif /* STM8S_H */
