@@ -1077,9 +1077,12 @@
 #define CPU_CCR                 _MEM_(0x7F0A)
 
 /* misc inline macros */
-#define enable_interrupts()     __asm__("rim");
-#define disable_interrupts()    __asm__("sim");
-#define nop()                   __asm__("nop");
-#define halt()                  __asm__("halt");
+#define enable_interrupts()     __asm__("rim")
+#define disable_interrupts()    __asm__("sim")
+#define rim()                   __asm__("rim")
+#define sim()                   __asm__("sim")
+#define nop()                   __asm__("nop")
+#define halt()                  __asm__("halt")
+#define wfi()                   __asm__("wfi")
 
 #endif /* STM8S_H */
