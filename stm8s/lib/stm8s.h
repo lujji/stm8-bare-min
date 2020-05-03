@@ -741,19 +741,145 @@
 /* TIM1 */
 #define TIM1_BASE_ADDRESS       0x5250
 #define TIM1_CR1                _SFR_(TIM1_BASE_ADDRESS + 0x00)
+#define TIM1_CR1_ARPE           7
+#define TIM1_CR1_CMS1           6
+#define TIM1_CR1_CMS0           5
+#define TIM1_CR1_DIR            4
+#define TIM1_CR1_OPM            3
+#define TIM1_CR1_URS            2
+#define TIM1_CR1_UDIS           1
+#define TIM1_CR1_CEN            0
 #define TIM1_CR2                _SFR_(TIM1_BASE_ADDRESS + 0x01)
+#define TIM1_CR2_MMS2           6
+#define TIM1_CR2_MMS1           5
+#define TIM1_CR2_MMS0           4
+#define TIM1_CR2_COMS           2
+#define TIM1_CR2_CCPC           0
 #define TIM1_SMCR               _SFR_(TIM1_BASE_ADDRESS + 0x02)
+#define TIM1_SMCR_MSM           7
+#define TIM1_SMCR_TS2           6
+#define TIM1_SMCR_TS1           5
+#define TIM1_SMCR_TS0           4
+#define TIM1_SMCR_SMS2          2
+#define TIM1_SMCR_SMS1          1
+#define TIM1_SMCR_SMS0          0
 #define TIM1_ETR                _SFR_(TIM1_BASE_ADDRESS + 0x03)
+#define TIM1_ETR_ETP            7
+#define TIM1_ETR_ECE            6
+#define TIM1_ETR_ETPS1          5
+#define TIM1_ETR_ETPS0          4
+#define TIM1_ETR_ETF3           3
+#define TIM1_ETR_ETF2           2
+#define TIM1_ETR_ETF1           1
+#define TIM1_ETR_ETF0           0
 #define TIM1_IER                _SFR_(TIM1_BASE_ADDRESS + 0x04)
+#define TIM1_IER_BIE            7
+#define TIM1_IER_TIE            6
+#define TIM1_IER_COMIE          5
+#define TIM1_IER_CC4IE          4
+#define TIM1_IER_CC3IE          3
+#define TIM1_IER_CC2IE          2
+#define TIM1_IER_CC1IE          1
+#define TIM1_IER_UIE            0
 #define TIM1_SR1                _SFR_(TIM1_BASE_ADDRESS + 0x05)
+#define TIM1_SR1_BIF            7
+#define TIM1_SR1_TIF            6
+#define TIM1_SR1_COMIF          5
+#define TIM1_SR1_CC4IF          4
+#define TIM1_SR1_CC3IF          3
+#define TIM1_SR1_CC2IF          2
+#define TIM1_SR1_CC1IF          1
+#define TIM1_SR1_UIF            0
 #define TIM1_SR2                _SFR_(TIM1_BASE_ADDRESS + 0x06)
+#define TIM1_SR2_CC4OF          4
+#define TIM1_SR2_CC3OF          3
+#define TIM1_SR2_CC2OF          2
+#define TIM1_SR2_CC1OF          1
 #define TIM1_EGR                _SFR_(TIM1_BASE_ADDRESS + 0x07)
+#define TIM1_EGR_BG             7
+#define TIM1_EGR_TG             6
+#define TIM1_EGR_COMG           5
+#define TIM1_EGR_CC4G           4
+#define TIM1_EGR_CC3G           3
+#define TIM1_EGR_CC2G           2
+#define TIM1_EGR_CC1G           1
+#define TIM1_EGR_UG             0
 #define TIM1_CCMR1              _SFR_(TIM1_BASE_ADDRESS + 0x08)
+#define TIM1_CCMR1_OC1CE        7
+#define TIM1_CCMR1_IC1F3        7
+#define TIM1_CCMR1_OC1M2        6
+#define TIM1_CCMR1_IC1F2        6
+#define TIM1_CCMR1_OC1M1        5
+#define TIM1_CCMR1_IC1F1        5
+#define TIM1_CCMR1_OC1M0        4
+#define TIM1_CCMR1_IC1F0        4
+#define TIM1_CCMR1_OC1PE        3
+#define TIM1_CCMR1_IC1PSC1      3
+#define TIM1_CCMR1_OC1FE        2
+#define TIM1_CCMR1_IC1PSC0      2
+#define TIM1_CCMR1_CC1S1        1
+#define TIM1_CCMR1_CC1S0        0
 #define TIM1_CCMR2              _SFR_(TIM1_BASE_ADDRESS + 0x09)
+#define TIM1_CCMR2_OC2CE        7
+#define TIM1_CCMR2_IC2F3        7
+#define TIM1_CCMR2_OC2M2        6
+#define TIM1_CCMR2_IC2F2        6
+#define TIM1_CCMR2_OC2M1        5
+#define TIM1_CCMR2_IC2F1        5
+#define TIM1_CCMR2_OC2M0        4
+#define TIM1_CCMR2_IC2F0        4
+#define TIM1_CCMR2_OC2PE        3
+#define TIM1_CCMR2_IC2PSC1      3
+#define TIM1_CCMR2_OC2FE        2
+#define TIM1_CCMR2_IC2PSC0      2
+#define TIM1_CCMR2_CC2S1        1
+#define TIM1_CCMR2_CC2S0        0
 #define TIM1_CCMR3              _SFR_(TIM1_BASE_ADDRESS + 0x0A)
+#define TIM1_CCMR3_OC3CE        7
+#define TIM1_CCMR3_IC3F3        7
+#define TIM1_CCMR3_OC3M2        6
+#define TIM1_CCMR3_IC3F2        6
+#define TIM1_CCMR3_OC3M1        5
+#define TIM1_CCMR3_IC3F1        5
+#define TIM1_CCMR3_OC3M0        4
+#define TIM1_CCMR3_IC3F0        4
+#define TIM1_CCMR3_OC3PE        3
+#define TIM1_CCMR3_IC3PSC1      3
+#define TIM1_CCMR3_OC3FE        2
+#define TIM1_CCMR3_IC3PSC0      2
+#define TIM1_CCMR3_CC3S1        1
+#define TIM1_CCMR3_CC3S0        0
 #define TIM1_CCMR4              _SFR_(TIM1_BASE_ADDRESS + 0x0B)
+#define TIM1_CCMR4_OC4CE        7
+#define TIM1_CCMR4_IC4F3        7
+#define TIM1_CCMR4_OC4M2        6
+#define TIM1_CCMR4_IC4F2        6
+#define TIM1_CCMR4_OC4M1        5
+#define TIM1_CCMR4_IC4F1        5
+#define TIM1_CCMR4_OC4M0        4
+#define TIM1_CCMR4_IC4F0        4
+#define TIM1_CCMR4_OC4PE        3
+#define TIM1_CCMR4_IC4PSC1      3
+#define TIM1_CCMR4_OC4FE        2
+#define TIM1_CCMR4_IC4PSC0      2
+#define TIM1_CCMR4_CC4S1        1
+#define TIM1_CCMR4_CC4S0        0
 #define TIM1_CCER1              _SFR_(TIM1_BASE_ADDRESS + 0x0C)
+#define TIM1_CCER1_CC2NP        7
+#define TIM1_CCER1_CC2NE        6
+#define TIM1_CCER1_CC2P         5
+#define TIM1_CCER1_CC2E         4
+#define TIM1_CCER1_CC1NP        3
+#define TIM1_CCER1_CC1NE        2
+#define TIM1_CCER1_CC1P         1
+#define TIM1_CCER1_CC1E         0
 #define TIM1_CCER2              _SFR_(TIM1_BASE_ADDRESS + 0x0D)
+#define TIM1_CCER2_CC4P         5
+#define TIM1_CCER2_CC4E         4
+#define TIM1_CCER2_CC3NP        3
+#define TIM1_CCER2_CC3NE        2
+#define TIM1_CCER2_CC3P         1
+#define TIM1_CCER2_CC3E         0
 #define TIM1_CNTR               _SFR16_(TIM1_BASE_ADDRESS + 0x0E)
 #define TIM1_CNTRH              _SFR_(TIM1_BASE_ADDRESS + 0x0E)
 #define TIM1_CNTRL              _SFR_(TIM1_BASE_ADDRESS + 0x0F)
@@ -777,8 +903,23 @@
 #define TIM1_CCR4H              _SFR_(TIM1_BASE_ADDRESS + 0x1B)
 #define TIM1_CCR4L              _SFR_(TIM1_BASE_ADDRESS + 0x1C)
 #define TIM1_BKR                _SFR_(TIM1_BASE_ADDRESS + 0x1D)
+#define TIM1_BKR_MOE            7
+#define TIM1_BKR_AOE            6
+#define TIM1_BKR_BKP            5
+#define TIM1_BKR_BKE            4
+#define TIM1_BKR_OSSR           3
+#define TIM1_BKR_OSSI           2
+#define TIM1_BKR_LOCK1          1
+#define TIM1_BKR_LOCK0          0
 #define TIM1_DTR                _SFR_(TIM1_BASE_ADDRESS + 0x1E)
 #define TIM1_OISR               _SFR_(TIM1_BASE_ADDRESS + 0x1F)
+#define TIM1_OISR_OIS4          6
+#define TIM1_OISR_OIS3N         5
+#define TIM1_OISR_OIS3          4
+#define TIM1_OISR_OIS2N         3
+#define TIM1_OISR_OIS2          2
+#define TIM1_OISR_OIS1N         1
+#define TIM1_OISR_OIS1          0
 
 /* TIM2 (mutually exclusive with TIM5) */
 #define TIM2_BASE_ADDRESS       0x5300
