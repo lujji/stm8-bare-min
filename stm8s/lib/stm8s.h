@@ -930,19 +930,71 @@
 #define TIM2_CR1_UDIS           1
 #define TIM2_CR1_CEN            0
 #define TIM2_IER                _SFR_(TIM2_BASE_ADDRESS + 0x03)
+#define TIM2_IER_CC3IE          3
+#define TIM2_IER_CC2IE          2
+#define TIM2_IER_CC1IE          1
+#define TIM2_IER_UIE            0
 #define TIM2_SR1                _SFR_(TIM2_BASE_ADDRESS + 0x04)
+#define TIM2_SR1_CC3IF          3
+#define TIM2_SR1_CC2IF          2
+#define TIM2_SR1_CC1IF          1
+#define TIM2_SR1_UIF            0
 #define TIM2_SR2                _SFR_(TIM2_BASE_ADDRESS + 0x05)
+#define TIM2_SR2_CC3OF          3
+#define TIM2_SR2_CC2OF          2
+#define TIM2_SR2_CC1OF          1
 #define TIM2_EGR                _SFR_(TIM2_BASE_ADDRESS + 0x06)
-#define TIM2_EGR_TG             6
 #define TIM2_EGR_CC3G           3
 #define TIM2_EGR_CC2G           2
 #define TIM2_EGR_CC1G           1
 #define TIM2_EGR_UG             0
 #define TIM2_CCMR1              _SFR_(TIM2_BASE_ADDRESS + 0x07)
+#define TIM2_CCMR1_IC1F3        7
+#define TIM2_CCMR1_OC1M2        6
+#define TIM2_CCMR1_IC1F2        6
+#define TIM2_CCMR1_OC1M1        5
+#define TIM2_CCMR1_IC1F1        5
+#define TIM2_CCMR1_OC1M0        4
+#define TIM2_CCMR1_IC1F0        4
+#define TIM2_CCMR1_OC1PE        3
+#define TIM2_CCMR1_IC1PSC1      3
+#define TIM2_CCMR1_IC1PSC0      2
+#define TIM2_CCMR1_CC1S1        1
+#define TIM2_CCMR1_CC1S0        0
 #define TIM2_CCMR2              _SFR_(TIM2_BASE_ADDRESS + 0x08)
+#define TIM2_CCMR2_IC2F3        7
+#define TIM2_CCMR2_OC2M2        6
+#define TIM2_CCMR2_IC2F2        6
+#define TIM2_CCMR2_OC2M1        5
+#define TIM2_CCMR2_IC2F1        5
+#define TIM2_CCMR2_OC2M0        4
+#define TIM2_CCMR2_IC2F0        4
+#define TIM2_CCMR2_OC2PE        3
+#define TIM2_CCMR2_IC2PSC1      3
+#define TIM2_CCMR2_IC2PSC0      2
+#define TIM2_CCMR2_CC2S1        1
+#define TIM2_CCMR2_CC2S0        0
 #define TIM2_CCMR3              _SFR_(TIM2_BASE_ADDRESS + 0x09)
+#define TIM2_CCMR3_IC3F3        7
+#define TIM2_CCMR3_OC3M2        6
+#define TIM2_CCMR3_IC3F2        6
+#define TIM2_CCMR3_OC3M1        5
+#define TIM2_CCMR3_IC3F1        5
+#define TIM2_CCMR3_OC3M0        4
+#define TIM2_CCMR3_IC3F0        4
+#define TIM2_CCMR3_OC3PE        3
+#define TIM2_CCMR3_IC3PSC1      3
+#define TIM2_CCMR3_IC3PSC0      2
+#define TIM2_CCMR3_CC3S1        1
+#define TIM2_CCMR3_CC3S0        0
 #define TIM2_CCER1              _SFR_(TIM2_BASE_ADDRESS + 0x0A)
+#define TIM2_CCER1_CC2P         5
+#define TIM2_CCER1_CC2E         4
+#define TIM2_CCER1_CC1P         1
+#define TIM2_CCER1_CC1E         0
 #define TIM2_CCER2              _SFR_(TIM2_BASE_ADDRESS + 0x0B)
+#define TIM2_CCER2_CC3P         1
+#define TIM2_CCER2_CC3E         0
 #define TIM2_CNTR               _SFR16_(TIM2_BASE_ADDRESS + 0x0C)
 #define TIM2_CNTRH              _SFR_(TIM2_BASE_ADDRESS + 0x0C)
 #define TIM2_CNTRL              _SFR_(TIM2_BASE_ADDRESS + 0x0D)
