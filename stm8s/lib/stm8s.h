@@ -1235,4 +1235,20 @@
                                             PA_CR1 = 0x04; PB_CR1 = 0xCF; PC_CR1 = 0x86; \
                                             PD_CR1 = 0x97; PE_CR1 = 0x20; PF_CR1 = 0x10; }
 
+/*  Perform delay of 5 seconds @2MHz before disable STM8S001J3 SWIM pin.
+    Recommendation of DS12129 Rev.3 pg.12.
+    Should be call before clock change in main(). */
+#define stm8s001j3_swim_delay_5s()  __asm__("   pushw x             \n" \
+                                            "   push a              \n" \
+                                            "   clrw x              \n" \
+                                            "00001$:                \n" \
+                                            "   ld a, #0x32         \n" \
+                                            "00002$:                \n" \
+                                            "   dec a               \n" \
+                                            "   jrne 00002$         \n" \
+                                            "   decw x              \n" \
+                                            "   jrne 00001$         \n" \
+                                            "   pop a               \n" \
+                                            "   popw x              \n");
+
 #endif /* STM8S_H */
