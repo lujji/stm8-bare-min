@@ -1170,6 +1170,8 @@
 /* Global Configuration */
 #define CFG_BASE_ADDRESS        0x7F60
 #define CFG_GCR                 _SFR_(CFG_BASE_ADDRESS + 0x00)
+#define CFG_GCR_AL              1
+#define CFG_GCR_SWD             0
 
 /* Interrupt Priority */
 #define ITC_BASE_ADDRESS        0x7F60
