@@ -516,10 +516,21 @@
 #define CLK_SWCR_SWBSY          0
 #define CLK_CKDIVR              _SFR_(CLK_BASE_ADDRESS + 0x06)
 #define CLK_PCKENR1             _SFR_(CLK_BASE_ADDRESS + 0x07)
+#define CLK_PCKENR1_PCKEN17     7
+#define CLK_PCKENR1_PCKEN16     6
+#define CLK_PCKENR1_PCKEN15     5
+#define CLK_PCKENR1_PCKEN14     4
+#define CLK_PCKENR1_PCKEN13     3
+#define CLK_PCKENR1_PCKEN12     2
+#define CLK_PCKENR1_PCKEN11     1
+#define CLK_PCKENR1_PCKEN10     0
 #define CLK_CSSR                _SFR_(CLK_BASE_ADDRESS + 0x08)
 #define CLK_CCOR                _SFR_(CLK_BASE_ADDRESS + 0x09)
 #define CLK_CCOR_CCOEN          0
 #define CLK_PCKENR2             _SFR_(CLK_BASE_ADDRESS + 0x0A)
+#define CLK_PCKENR2_PCKEN27     7
+#define CLK_PCKENR2_PCKEN23     3
+#define CLK_PCKENR2_PCKEN22     2
 #define CLK_HSITRIMR            _SFR_(CLK_BASE_ADDRESS + 0x0C)
 #define CLK_SWIMCCR             _SFR_(CLK_BASE_ADDRESS + 0x0D)
 
