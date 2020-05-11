@@ -478,7 +478,18 @@
 /* EXTI */
 #define EXTI_BASE_ADDRESS       0x50A0
 #define EXTI_CR1                _SFR_(EXTI_BASE_ADDRESS + 0x00)
+#define EXTI_CR1_PDIS1          7
+#define EXTI_CR1_PDIS0          6
+#define EXTI_CR1_PCIS1          5
+#define EXTI_CR1_PCIS0          4
+#define EXTI_CR1_PBIS1          3
+#define EXTI_CR1_PBIS0          2
+#define EXTI_CR1_PAIS1          1
+#define EXTI_CR1_PAIS0          0
 #define EXTI_CR2                _SFR_(EXTI_BASE_ADDRESS + 0x01)
+#define EXTI_CR2_TLIS           2
+#define EXTI_CR2_PEIS1          1
+#define EXTI_CR2_PEIS0          0
 
 /* RST */
 #define RST_BASE_ADDRESS        0x50B3
