@@ -3,81 +3,445 @@
 
 #include <stdint.h>
 
-#define _MEM_(mem_addr)      (*(volatile uint8_t *)(mem_addr))
-#define _SFR_(mem_addr)      (*(volatile uint8_t *)((mem_addr)))
-#define _SFR16_(mem_addr)    (*(volatile uint16_t *)((mem_addr)))
+#ifndef  _BV
+# define _BV(bit)               (1 << (bit))
+#endif
+
+#define _MEM_(mem_addr)         (*(volatile uint8_t *)(mem_addr))
+#define _SFR_(mem_addr)         (*(volatile uint8_t *)((mem_addr)))
+#define _SFR16_(mem_addr)       (*(volatile uint16_t *)((mem_addr)))
 
 /* PORT A */
 #define PA_BASE_ADDRESS         0x5000
 #define PA_ODR                  _SFR_(PA_BASE_ADDRESS + 0x00)
+#define PA_ODR_ODR7             7
+#define PA_ODR_ODR6             6
+#define PA_ODR_ODR5             5
+#define PA_ODR_ODR4             4
+#define PA_ODR_ODR3             3
+#define PA_ODR_ODR2             2
+#define PA_ODR_ODR1             1
+#define PA_ODR_ODR0             0
 #define PA_IDR                  _SFR_(PA_BASE_ADDRESS + 0x01)
+#define PA_IDR_IDR7             7
+#define PA_IDR_IDR6             6
+#define PA_IDR_IDR5             5
+#define PA_IDR_IDR4             4
+#define PA_IDR_IDR3             3
+#define PA_IDR_IDR2             2
+#define PA_IDR_IDR1             1
+#define PA_IDR_IDR0             0
 #define PA_DDR                  _SFR_(PA_BASE_ADDRESS + 0x02)
+#define PA_DDR_DDR7             7
+#define PA_DDR_DDR6             6
+#define PA_DDR_DDR5             5
+#define PA_DDR_DDR4             4
+#define PA_DDR_DDR3             3
+#define PA_DDR_DDR2             2
+#define PA_DDR_DDR1             1
+#define PA_DDR_DDR0             0
 #define PA_CR1                  _SFR_(PA_BASE_ADDRESS + 0x03)
+#define PA_CR1_C17              7
+#define PA_CR1_C16              6
+#define PA_CR1_C15              5
+#define PA_CR1_C14              4
+#define PA_CR1_C13              3
+#define PA_CR1_C12              2
+#define PA_CR1_C11              1
+#define PA_CR1_C10              0
 #define PA_CR2                  _SFR_(PA_BASE_ADDRESS + 0x04)
+#define PA_CR2_C27              7
+#define PA_CR2_C26              6
+#define PA_CR2_C25              5
+#define PA_CR2_C24              4
+#define PA_CR2_C23              3
+#define PA_CR2_C22              2
+#define PA_CR2_C21              1
+#define PA_CR2_C20              0
 
 /* PORT B */
 #define PB_BASE_ADDRESS         0x5005
 #define PB_ODR                  _SFR_(PB_BASE_ADDRESS + 0x00)
+#define PB_ODR_ODR7             7
+#define PB_ODR_ODR6             6
+#define PB_ODR_ODR5             5
+#define PB_ODR_ODR4             4
+#define PB_ODR_ODR3             3
+#define PB_ODR_ODR2             2
+#define PB_ODR_ODR1             1
+#define PB_ODR_ODR0             0
 #define PB_IDR                  _SFR_(PB_BASE_ADDRESS + 0x01)
+#define PB_IDR_IDR7             7
+#define PB_IDR_IDR6             6
+#define PB_IDR_IDR5             5
+#define PB_IDR_IDR4             4
+#define PB_IDR_IDR3             3
+#define PB_IDR_IDR2             2
+#define PB_IDR_IDR1             1
+#define PB_IDR_IDR0             0
 #define PB_DDR                  _SFR_(PB_BASE_ADDRESS + 0x02)
+#define PB_DDR_DDR7             7
+#define PB_DDR_DDR6             6
+#define PB_DDR_DDR5             5
+#define PB_DDR_DDR4             4
+#define PB_DDR_DDR3             3
+#define PB_DDR_DDR2             2
+#define PB_DDR_DDR1             1
+#define PB_DDR_DDR0             0
 #define PB_CR1                  _SFR_(PB_BASE_ADDRESS + 0x03)
+#define PB_CR1_C17              7
+#define PB_CR1_C16              6
+#define PB_CR1_C15              5
+#define PB_CR1_C14              4
+#define PB_CR1_C13              3
+#define PB_CR1_C12              2
+#define PB_CR1_C11              1
+#define PB_CR1_C10              0
 #define PB_CR2                  _SFR_(PB_BASE_ADDRESS + 0x04)
+#define PB_CR2_C27              7
+#define PB_CR2_C26              6
+#define PB_CR2_C25              5
+#define PB_CR2_C24              4
+#define PB_CR2_C23              3
+#define PB_CR2_C22              2
+#define PB_CR2_C21              1
+#define PB_CR2_C20              0
 
 /* PORT C */
 #define PC_BASE_ADDRESS         0x500A
 #define PC_ODR                  _SFR_(PC_BASE_ADDRESS + 0x00)
+#define PC_ODR_ODR7             7
+#define PC_ODR_ODR6             6
+#define PC_ODR_ODR5             5
+#define PC_ODR_ODR4             4
+#define PC_ODR_ODR3             3
+#define PC_ODR_ODR2             2
+#define PC_ODR_ODR1             1
+#define PC_ODR_ODR0             0
 #define PC_IDR                  _SFR_(PC_BASE_ADDRESS + 0x01)
+#define PC_IDR_IDR7             7
+#define PC_IDR_IDR6             6
+#define PC_IDR_IDR5             5
+#define PC_IDR_IDR4             4
+#define PC_IDR_IDR3             3
+#define PC_IDR_IDR2             2
+#define PC_IDR_IDR1             1
+#define PC_IDR_IDR0             0
 #define PC_DDR                  _SFR_(PC_BASE_ADDRESS + 0x02)
+#define PC_DDR_DDR7             7
+#define PC_DDR_DDR6             6
+#define PC_DDR_DDR5             5
+#define PC_DDR_DDR4             4
+#define PC_DDR_DDR3             3
+#define PC_DDR_DDR2             2
+#define PC_DDR_DDR1             1
+#define PC_DDR_DDR0             0
 #define PC_CR1                  _SFR_(PC_BASE_ADDRESS + 0x03)
+#define PC_CR1_C17              7
+#define PC_CR1_C16              6
+#define PC_CR1_C15              5
+#define PC_CR1_C14              4
+#define PC_CR1_C13              3
+#define PC_CR1_C12              2
+#define PC_CR1_C11              1
+#define PC_CR1_C10              0
 #define PC_CR2                  _SFR_(PC_BASE_ADDRESS + 0x04)
+#define PC_CR2_C27              7
+#define PC_CR2_C26              6
+#define PC_CR2_C25              5
+#define PC_CR2_C24              4
+#define PC_CR2_C23              3
+#define PC_CR2_C22              2
+#define PC_CR2_C21              1
+#define PC_CR2_C20              0
 
 /* PORT D */
 #define PD_BASE_ADDRESS         0x500F
 #define PD_ODR                  _SFR_(PD_BASE_ADDRESS + 0x00)
+#define PD_ODR_ODR7             7
+#define PD_ODR_ODR6             6
+#define PD_ODR_ODR5             5
+#define PD_ODR_ODR4             4
+#define PD_ODR_ODR3             3
+#define PD_ODR_ODR2             2
+#define PD_ODR_ODR1             1
+#define PD_ODR_ODR0             0
 #define PD_IDR                  _SFR_(PD_BASE_ADDRESS + 0x01)
+#define PD_IDR_IDR7             7
+#define PD_IDR_IDR6             6
+#define PD_IDR_IDR5             5
+#define PD_IDR_IDR4             4
+#define PD_IDR_IDR3             3
+#define PD_IDR_IDR2             2
+#define PD_IDR_IDR1             1
+#define PD_IDR_IDR0             0
 #define PD_DDR                  _SFR_(PD_BASE_ADDRESS + 0x02)
+#define PD_DDR_DDR7             7
+#define PD_DDR_DDR6             6
+#define PD_DDR_DDR5             5
+#define PD_DDR_DDR4             4
+#define PD_DDR_DDR3             3
+#define PD_DDR_DDR2             2
+#define PD_DDR_DDR1             1
+#define PD_DDR_DDR0             0
 #define PD_CR1                  _SFR_(PD_BASE_ADDRESS + 0x03)
+#define PD_CR1_C17              7
+#define PD_CR1_C16              6
+#define PD_CR1_C15              5
+#define PD_CR1_C14              4
+#define PD_CR1_C13              3
+#define PD_CR1_C12              2
+#define PD_CR1_C11              1
+#define PD_CR1_C10              0
 #define PD_CR2                  _SFR_(PD_BASE_ADDRESS + 0x04)
+#define PD_CR2_C27              7
+#define PD_CR2_C26              6
+#define PD_CR2_C25              5
+#define PD_CR2_C24              4
+#define PD_CR2_C23              3
+#define PD_CR2_C22              2
+#define PD_CR2_C21              1
+#define PD_CR2_C20              0
 
 /* PORT E */
 #define PE_BASE_ADDRESS         0x5014
 #define PE_ODR                  _SFR_(PE_BASE_ADDRESS + 0x00)
+#define PE_ODR_ODR7             7
+#define PE_ODR_ODR6             6
+#define PE_ODR_ODR5             5
+#define PE_ODR_ODR4             4
+#define PE_ODR_ODR3             3
+#define PE_ODR_ODR2             2
+#define PE_ODR_ODR1             1
+#define PE_ODR_ODR0             0
 #define PE_IDR                  _SFR_(PE_BASE_ADDRESS + 0x01)
+#define PE_IDR_IDR7             7
+#define PE_IDR_IDR6             6
+#define PE_IDR_IDR5             5
+#define PE_IDR_IDR4             4
+#define PE_IDR_IDR3             3
+#define PE_IDR_IDR2             2
+#define PE_IDR_IDR1             1
+#define PE_IDR_IDR0             0
 #define PE_DDR                  _SFR_(PE_BASE_ADDRESS + 0x02)
+#define PE_DDR_DDR7             7
+#define PE_DDR_DDR6             6
+#define PE_DDR_DDR5             5
+#define PE_DDR_DDR4             4
+#define PE_DDR_DDR3             3
+#define PE_DDR_DDR2             2
+#define PE_DDR_DDR1             1
+#define PE_DDR_DDR0             0
 #define PE_CR1                  _SFR_(PE_BASE_ADDRESS + 0x03)
+#define PE_CR1_C17              7
+#define PE_CR1_C16              6
+#define PE_CR1_C15              5
+#define PE_CR1_C14              4
+#define PE_CR1_C13              3
+#define PE_CR1_C12              2
+#define PE_CR1_C11              1
+#define PE_CR1_C10              0
 #define PE_CR2                  _SFR_(PE_BASE_ADDRESS + 0x04)
+#define PE_CR2_C27              7
+#define PE_CR2_C26              6
+#define PE_CR2_C25              5
+#define PE_CR2_C24              4
+#define PE_CR2_C23              3
+#define PE_CR2_C22              2
+#define PE_CR2_C21              1
+#define PE_CR2_C20              0
 
 /* PORT F */
 #define PF_BASE_ADDRESS         0x5019
 #define PF_ODR                  _SFR_(PF_BASE_ADDRESS + 0x00)
+#define PF_ODR_ODR7             7
+#define PF_ODR_ODR6             6
+#define PF_ODR_ODR5             5
+#define PF_ODR_ODR4             4
+#define PF_ODR_ODR3             3
+#define PF_ODR_ODR2             2
+#define PF_ODR_ODR1             1
+#define PF_ODR_ODR0             0
 #define PF_IDR                  _SFR_(PF_BASE_ADDRESS + 0x01)
+#define PF_IDR_IDR7             7
+#define PF_IDR_IDR6             6
+#define PF_IDR_IDR5             5
+#define PF_IDR_IDR4             4
+#define PF_IDR_IDR3             3
+#define PF_IDR_IDR2             2
+#define PF_IDR_IDR1             1
+#define PF_IDR_IDR0             0
 #define PF_DDR                  _SFR_(PF_BASE_ADDRESS + 0x02)
+#define PF_DDR_DDR7             7
+#define PF_DDR_DDR6             6
+#define PF_DDR_DDR5             5
+#define PF_DDR_DDR4             4
+#define PF_DDR_DDR3             3
+#define PF_DDR_DDR2             2
+#define PF_DDR_DDR1             1
+#define PF_DDR_DDR0             0
 #define PF_CR1                  _SFR_(PF_BASE_ADDRESS + 0x03)
+#define PF_CR1_C17              7
+#define PF_CR1_C16              6
+#define PF_CR1_C15              5
+#define PF_CR1_C14              4
+#define PF_CR1_C13              3
+#define PF_CR1_C12              2
+#define PF_CR1_C11              1
+#define PF_CR1_C10              0
 #define PF_CR2                  _SFR_(PF_BASE_ADDRESS + 0x04)
+#define PF_CR2_C27              7
+#define PF_CR2_C26              6
+#define PF_CR2_C25              5
+#define PF_CR2_C24              4
+#define PF_CR2_C23              3
+#define PF_CR2_C22              2
+#define PF_CR2_C21              1
+#define PF_CR2_C20              0
 
 /* PORT G */
 #define PG_BASE_ADDRESS         0x501E
 #define PG_ODR                  _SFR_(PG_BASE_ADDRESS + 0x00)
+#define PG_ODR_ODR7             7
+#define PG_ODR_ODR6             6
+#define PG_ODR_ODR5             5
+#define PG_ODR_ODR4             4
+#define PG_ODR_ODR3             3
+#define PG_ODR_ODR2             2
+#define PG_ODR_ODR1             1
+#define PG_ODR_ODR0             0
 #define PG_IDR                  _SFR_(PG_BASE_ADDRESS + 0x01)
+#define PG_IDR_IDR7             7
+#define PG_IDR_IDR6             6
+#define PG_IDR_IDR5             5
+#define PG_IDR_IDR4             4
+#define PG_IDR_IDR3             3
+#define PG_IDR_IDR2             2
+#define PG_IDR_IDR1             1
+#define PG_IDR_IDR0             0
 #define PG_DDR                  _SFR_(PG_BASE_ADDRESS + 0x02)
+#define PG_DDR_DDR7             7
+#define PG_DDR_DDR6             6
+#define PG_DDR_DDR5             5
+#define PG_DDR_DDR4             4
+#define PG_DDR_DDR3             3
+#define PG_DDR_DDR2             2
+#define PG_DDR_DDR1             1
+#define PG_DDR_DDR0             0
 #define PG_CR1                  _SFR_(PG_BASE_ADDRESS + 0x03)
+#define PG_CR1_C17              7
+#define PG_CR1_C16              6
+#define PG_CR1_C15              5
+#define PG_CR1_C14              4
+#define PG_CR1_C13              3
+#define PG_CR1_C12              2
+#define PG_CR1_C11              1
+#define PG_CR1_C10              0
 #define PG_CR2                  _SFR_(PG_BASE_ADDRESS + 0x04)
+#define PG_CR2_C27              7
+#define PG_CR2_C26              6
+#define PG_CR2_C25              5
+#define PG_CR2_C24              4
+#define PG_CR2_C23              3
+#define PG_CR2_C22              2
+#define PG_CR2_C21              1
+#define PG_CR2_C20              0
 
 /* PORT H */
 #define PH_BASE_ADDRESS         0x5023
 #define PH_ODR                  _SFR_(PH_BASE_ADDRESS + 0x00)
+#define PH_ODR_ODR7             7
+#define PH_ODR_ODR6             6
+#define PH_ODR_ODR5             5
+#define PH_ODR_ODR4             4
+#define PH_ODR_ODR3             3
+#define PH_ODR_ODR2             2
+#define PH_ODR_ODR1             1
+#define PH_ODR_ODR0             0
 #define PH_IDR                  _SFR_(PH_BASE_ADDRESS + 0x01)
+#define PH_IDR_IDR7             7
+#define PH_IDR_IDR6             6
+#define PH_IDR_IDR5             5
+#define PH_IDR_IDR4             4
+#define PH_IDR_IDR3             3
+#define PH_IDR_IDR2             2
+#define PH_IDR_IDR1             1
+#define PH_IDR_IDR0             0
 #define PH_DDR                  _SFR_(PH_BASE_ADDRESS + 0x02)
+#define PH_DDR_DDR7             7
+#define PH_DDR_DDR6             6
+#define PH_DDR_DDR5             5
+#define PH_DDR_DDR4             4
+#define PH_DDR_DDR3             3
+#define PH_DDR_DDR2             2
+#define PH_DDR_DDR1             1
+#define PH_DDR_DDR0             0
 #define PH_CR1                  _SFR_(PH_BASE_ADDRESS + 0x03)
+#define PH_CR1_C17              7
+#define PH_CR1_C16              6
+#define PH_CR1_C15              5
+#define PH_CR1_C14              4
+#define PH_CR1_C13              3
+#define PH_CR1_C12              2
+#define PH_CR1_C11              1
+#define PH_CR1_C10              0
 #define PH_CR2                  _SFR_(PH_BASE_ADDRESS + 0x04)
+#define PH_CR2_C27              7
+#define PH_CR2_C26              6
+#define PH_CR2_C25              5
+#define PH_CR2_C24              4
+#define PH_CR2_C23              3
+#define PH_CR2_C22              2
+#define PH_CR2_C21              1
+#define PH_CR2_C20              0
 
 /* PORT I */
 #define PI_BASE_ADDRESS         0x5028
 #define PI_ODR                  _SFR_(PI_BASE_ADDRESS + 0x00)
+#define PI_ODR_ODR7             7
+#define PI_ODR_ODR6             6
+#define PI_ODR_ODR5             5
+#define PI_ODR_ODR4             4
+#define PI_ODR_ODR3             3
+#define PI_ODR_ODR2             2
+#define PI_ODR_ODR1             1
+#define PI_ODR_ODR0             0
 #define PI_IDR                  _SFR_(PI_BASE_ADDRESS + 0x01)
+#define PI_IDR_IDR7             7
+#define PI_IDR_IDR6             6
+#define PI_IDR_IDR5             5
+#define PI_IDR_IDR4             4
+#define PI_IDR_IDR3             3
+#define PI_IDR_IDR2             2
+#define PI_IDR_IDR1             1
+#define PI_IDR_IDR0             0
 #define PI_DDR                  _SFR_(PI_BASE_ADDRESS + 0x02)
+#define PI_DDR_DDR7             7
+#define PI_DDR_DDR6             6
+#define PI_DDR_DDR5             5
+#define PI_DDR_DDR4             4
+#define PI_DDR_DDR3             3
+#define PI_DDR_DDR2             2
+#define PI_DDR_DDR1             1
+#define PI_DDR_DDR0             0
 #define PI_CR1                  _SFR_(PI_BASE_ADDRESS + 0x03)
+#define PI_CR1_C17              7
+#define PI_CR1_C16              6
+#define PI_CR1_C15              5
+#define PI_CR1_C14              4
+#define PI_CR1_C13              3
+#define PI_CR1_C12              2
+#define PI_CR1_C11              1
+#define PI_CR1_C10              0
 #define PI_CR2                  _SFR_(PI_BASE_ADDRESS + 0x04)
+#define PI_CR2_C27              7
+#define PI_CR2_C26              6
+#define PI_CR2_C25              5
+#define PI_CR2_C24              4
+#define PI_CR2_C23              3
+#define PI_CR2_C22              2
+#define PI_CR2_C21              1
+#define PI_CR2_C20              0
 
 /* Flash */
 #define FLASH_BASE_ADDRESS      0x505A
@@ -114,7 +478,18 @@
 /* EXTI */
 #define EXTI_BASE_ADDRESS       0x50A0
 #define EXTI_CR1                _SFR_(EXTI_BASE_ADDRESS + 0x00)
+#define EXTI_CR1_PDIS1          7
+#define EXTI_CR1_PDIS0          6
+#define EXTI_CR1_PCIS1          5
+#define EXTI_CR1_PCIS0          4
+#define EXTI_CR1_PBIS1          3
+#define EXTI_CR1_PBIS0          2
+#define EXTI_CR1_PAIS1          1
+#define EXTI_CR1_PAIS0          0
 #define EXTI_CR2                _SFR_(EXTI_BASE_ADDRESS + 0x01)
+#define EXTI_CR2_TLIS           2
+#define EXTI_CR2_PEIS1          1
+#define EXTI_CR2_PEIS0          0
 
 /* RST */
 #define RST_BASE_ADDRESS        0x50B3
@@ -141,10 +516,21 @@
 #define CLK_SWCR_SWBSY          0
 #define CLK_CKDIVR              _SFR_(CLK_BASE_ADDRESS + 0x06)
 #define CLK_PCKENR1             _SFR_(CLK_BASE_ADDRESS + 0x07)
+#define CLK_PCKENR1_PCKEN17     7
+#define CLK_PCKENR1_PCKEN16     6
+#define CLK_PCKENR1_PCKEN15     5
+#define CLK_PCKENR1_PCKEN14     4
+#define CLK_PCKENR1_PCKEN13     3
+#define CLK_PCKENR1_PCKEN12     2
+#define CLK_PCKENR1_PCKEN11     1
+#define CLK_PCKENR1_PCKEN10     0
 #define CLK_CSSR                _SFR_(CLK_BASE_ADDRESS + 0x08)
 #define CLK_CCOR                _SFR_(CLK_BASE_ADDRESS + 0x09)
 #define CLK_CCOR_CCOEN          0
 #define CLK_PCKENR2             _SFR_(CLK_BASE_ADDRESS + 0x0A)
+#define CLK_PCKENR2_PCKEN27     7
+#define CLK_PCKENR2_PCKEN23     3
+#define CLK_PCKENR2_PCKEN22     2
 #define CLK_HSITRIMR            _SFR_(CLK_BASE_ADDRESS + 0x0C)
 #define CLK_SWIMCCR             _SFR_(CLK_BASE_ADDRESS + 0x0D)
 
@@ -211,34 +597,92 @@
 /* I2C */
 #define I2C_BASE_ADDRESS        0x5210
 #define I2C_CR1                 _SFR_(I2C_BASE_ADDRESS + 0x00)
+#define I2C_CR1_NOSTRETCH       7
+#define I2C_CR1_ENGC            6
 #define I2C_CR1_PE              0
 #define I2C_CR2                 _SFR_(I2C_BASE_ADDRESS + 0x01)
+#define I2C_CR2_SWRST           7
+#define I2C_CR2_POS             3
 #define I2C_CR2_ACK             2
 #define I2C_CR2_STOP            1
 #define I2C_CR2_START           0
 #define I2C_FREQR               _SFR_(I2C_BASE_ADDRESS + 0x02)
+#define I2C_FREQR_FREQ5         5
+#define I2C_FREQR_FREQ4         4
+#define I2C_FREQR_FREQ3         3
 #define I2C_FREQR_FREQ2         2
 #define I2C_FREQR_FREQ1         1
 #define I2C_FREQR_FREQ0         0
 #define I2C_OARL                _SFR_(I2C_BASE_ADDRESS + 0x03)
+#define I2C_OARL_ADD7           7
+#define I2C_OARL_ADD6           6
+#define I2C_OARL_ADD5           5
+#define I2C_OARL_ADD4           4
+#define I2C_OARL_ADD3           3
+#define I2C_OARL_ADD2           2
+#define I2C_OARL_ADD1           1
+#define I2C_OARL_ADD0           0
 #define I2C_OARH                _SFR_(I2C_BASE_ADDRESS + 0x04)
 #define I2C_OARH_ADDMODE        7
 #define I2C_OARH_ADDCONF        6
+#define I2C_OARH_ADD9           2
+#define I2C_OARH_ADD8           1
 #define I2C_DR                  _SFR_(I2C_BASE_ADDRESS + 0x06)
+#define I2C_DR_DR7              7
+#define I2C_DR_DR6              6
+#define I2C_DR_DR5              5
+#define I2C_DR_DR4              4
+#define I2C_DR_DR3              3
+#define I2C_DR_DR2              2
+#define I2C_DR_DR1              1
+#define I2C_DR_DR0              0
 #define I2C_SR1                 _SFR_(I2C_BASE_ADDRESS + 0x07)
 #define I2C_SR1_TXE             7
 #define I2C_SR1_RXNE            6
+#define I2C_SR1_STOPF           4
+#define I2C_SR1_ADD10           3
 #define I2C_SR1_BTF             2
 #define I2C_SR1_ADDR            1
 #define I2C_SR1_SB              0
 #define I2C_SR2                 _SFR_(I2C_BASE_ADDRESS + 0x08)
+#define I2C_SR2_WUFH            5
+#define I2C_SR2_OVR             3
+#define I2C_SR2_AF              2
+#define I2C_SR2_ARLO            1
+#define I2C_SR2_BERR            0
 #define I2C_SR3                 _SFR_(I2C_BASE_ADDRESS + 0x09)
+#define I2C_SR3_DUALF           7
+#define I2C_SR3_GENCALL         4
+#define I2C_SR3_TRA             2
 #define I2C_SR3_BUSY            1
 #define I2C_SR3_MSL             0
 #define I2C_ITR                 _SFR_(I2C_BASE_ADDRESS + 0x0A)
+#define I2C_ITR_ITBUFEN         2
+#define I2C_ITR_ITEVTEN         1
+#define I2C_ITR_ITERREN         0
 #define I2C_CCRL                _SFR_(I2C_BASE_ADDRESS + 0x0B)
+#define I2C_CCRL_CCR7           7
+#define I2C_CCRL_CCR6           6
+#define I2C_CCRL_CCR5           5
+#define I2C_CCRL_CCR4           4
+#define I2C_CCRL_CCR3           3
+#define I2C_CCRL_CCR2           2
+#define I2C_CCRL_CCR1           1
+#define I2C_CCRL_CCR0           0
 #define I2C_CCRH                _SFR_(I2C_BASE_ADDRESS + 0x0C)
+#define I2C_CCRH_FS             7
+#define I2C_CCRH_DUTY           6
+#define I2C_CCRH_CCR11          3
+#define I2C_CCRH_CCR10          2
+#define I2C_CCRH_CCR9           1
+#define I2C_CCRH_CCR8           0
 #define I2C_TRISER              _SFR_(I2C_BASE_ADDRESS + 0x0D)
+#define I2C_TRISER_TRISE5       5
+#define I2C_TRISER_TRISE4       4
+#define I2C_TRISER_TRISE3       3
+#define I2C_TRISER_TRISE2       2
+#define I2C_TRISER_TRISE1       1
+#define I2C_TRISER_TRISE0       0
 #define I2C_PECR                _SFR_(I2C_BASE_ADDRESS + 0x0E)
 
 /* UART1 (mutually exclusive with UART4) */
@@ -319,19 +763,145 @@
 /* TIM1 */
 #define TIM1_BASE_ADDRESS       0x5250
 #define TIM1_CR1                _SFR_(TIM1_BASE_ADDRESS + 0x00)
+#define TIM1_CR1_ARPE           7
+#define TIM1_CR1_CMS1           6
+#define TIM1_CR1_CMS0           5
+#define TIM1_CR1_DIR            4
+#define TIM1_CR1_OPM            3
+#define TIM1_CR1_URS            2
+#define TIM1_CR1_UDIS           1
+#define TIM1_CR1_CEN            0
 #define TIM1_CR2                _SFR_(TIM1_BASE_ADDRESS + 0x01)
+#define TIM1_CR2_MMS2           6
+#define TIM1_CR2_MMS1           5
+#define TIM1_CR2_MMS0           4
+#define TIM1_CR2_COMS           2
+#define TIM1_CR2_CCPC           0
 #define TIM1_SMCR               _SFR_(TIM1_BASE_ADDRESS + 0x02)
+#define TIM1_SMCR_MSM           7
+#define TIM1_SMCR_TS2           6
+#define TIM1_SMCR_TS1           5
+#define TIM1_SMCR_TS0           4
+#define TIM1_SMCR_SMS2          2
+#define TIM1_SMCR_SMS1          1
+#define TIM1_SMCR_SMS0          0
 #define TIM1_ETR                _SFR_(TIM1_BASE_ADDRESS + 0x03)
+#define TIM1_ETR_ETP            7
+#define TIM1_ETR_ECE            6
+#define TIM1_ETR_ETPS1          5
+#define TIM1_ETR_ETPS0          4
+#define TIM1_ETR_ETF3           3
+#define TIM1_ETR_ETF2           2
+#define TIM1_ETR_ETF1           1
+#define TIM1_ETR_ETF0           0
 #define TIM1_IER                _SFR_(TIM1_BASE_ADDRESS + 0x04)
+#define TIM1_IER_BIE            7
+#define TIM1_IER_TIE            6
+#define TIM1_IER_COMIE          5
+#define TIM1_IER_CC4IE          4
+#define TIM1_IER_CC3IE          3
+#define TIM1_IER_CC2IE          2
+#define TIM1_IER_CC1IE          1
+#define TIM1_IER_UIE            0
 #define TIM1_SR1                _SFR_(TIM1_BASE_ADDRESS + 0x05)
+#define TIM1_SR1_BIF            7
+#define TIM1_SR1_TIF            6
+#define TIM1_SR1_COMIF          5
+#define TIM1_SR1_CC4IF          4
+#define TIM1_SR1_CC3IF          3
+#define TIM1_SR1_CC2IF          2
+#define TIM1_SR1_CC1IF          1
+#define TIM1_SR1_UIF            0
 #define TIM1_SR2                _SFR_(TIM1_BASE_ADDRESS + 0x06)
+#define TIM1_SR2_CC4OF          4
+#define TIM1_SR2_CC3OF          3
+#define TIM1_SR2_CC2OF          2
+#define TIM1_SR2_CC1OF          1
 #define TIM1_EGR                _SFR_(TIM1_BASE_ADDRESS + 0x07)
+#define TIM1_EGR_BG             7
+#define TIM1_EGR_TG             6
+#define TIM1_EGR_COMG           5
+#define TIM1_EGR_CC4G           4
+#define TIM1_EGR_CC3G           3
+#define TIM1_EGR_CC2G           2
+#define TIM1_EGR_CC1G           1
+#define TIM1_EGR_UG             0
 #define TIM1_CCMR1              _SFR_(TIM1_BASE_ADDRESS + 0x08)
+#define TIM1_CCMR1_OC1CE        7
+#define TIM1_CCMR1_IC1F3        7
+#define TIM1_CCMR1_OC1M2        6
+#define TIM1_CCMR1_IC1F2        6
+#define TIM1_CCMR1_OC1M1        5
+#define TIM1_CCMR1_IC1F1        5
+#define TIM1_CCMR1_OC1M0        4
+#define TIM1_CCMR1_IC1F0        4
+#define TIM1_CCMR1_OC1PE        3
+#define TIM1_CCMR1_IC1PSC1      3
+#define TIM1_CCMR1_OC1FE        2
+#define TIM1_CCMR1_IC1PSC0      2
+#define TIM1_CCMR1_CC1S1        1
+#define TIM1_CCMR1_CC1S0        0
 #define TIM1_CCMR2              _SFR_(TIM1_BASE_ADDRESS + 0x09)
+#define TIM1_CCMR2_OC2CE        7
+#define TIM1_CCMR2_IC2F3        7
+#define TIM1_CCMR2_OC2M2        6
+#define TIM1_CCMR2_IC2F2        6
+#define TIM1_CCMR2_OC2M1        5
+#define TIM1_CCMR2_IC2F1        5
+#define TIM1_CCMR2_OC2M0        4
+#define TIM1_CCMR2_IC2F0        4
+#define TIM1_CCMR2_OC2PE        3
+#define TIM1_CCMR2_IC2PSC1      3
+#define TIM1_CCMR2_OC2FE        2
+#define TIM1_CCMR2_IC2PSC0      2
+#define TIM1_CCMR2_CC2S1        1
+#define TIM1_CCMR2_CC2S0        0
 #define TIM1_CCMR3              _SFR_(TIM1_BASE_ADDRESS + 0x0A)
+#define TIM1_CCMR3_OC3CE        7
+#define TIM1_CCMR3_IC3F3        7
+#define TIM1_CCMR3_OC3M2        6
+#define TIM1_CCMR3_IC3F2        6
+#define TIM1_CCMR3_OC3M1        5
+#define TIM1_CCMR3_IC3F1        5
+#define TIM1_CCMR3_OC3M0        4
+#define TIM1_CCMR3_IC3F0        4
+#define TIM1_CCMR3_OC3PE        3
+#define TIM1_CCMR3_IC3PSC1      3
+#define TIM1_CCMR3_OC3FE        2
+#define TIM1_CCMR3_IC3PSC0      2
+#define TIM1_CCMR3_CC3S1        1
+#define TIM1_CCMR3_CC3S0        0
 #define TIM1_CCMR4              _SFR_(TIM1_BASE_ADDRESS + 0x0B)
+#define TIM1_CCMR4_OC4CE        7
+#define TIM1_CCMR4_IC4F3        7
+#define TIM1_CCMR4_OC4M2        6
+#define TIM1_CCMR4_IC4F2        6
+#define TIM1_CCMR4_OC4M1        5
+#define TIM1_CCMR4_IC4F1        5
+#define TIM1_CCMR4_OC4M0        4
+#define TIM1_CCMR4_IC4F0        4
+#define TIM1_CCMR4_OC4PE        3
+#define TIM1_CCMR4_IC4PSC1      3
+#define TIM1_CCMR4_OC4FE        2
+#define TIM1_CCMR4_IC4PSC0      2
+#define TIM1_CCMR4_CC4S1        1
+#define TIM1_CCMR4_CC4S0        0
 #define TIM1_CCER1              _SFR_(TIM1_BASE_ADDRESS + 0x0C)
+#define TIM1_CCER1_CC2NP        7
+#define TIM1_CCER1_CC2NE        6
+#define TIM1_CCER1_CC2P         5
+#define TIM1_CCER1_CC2E         4
+#define TIM1_CCER1_CC1NP        3
+#define TIM1_CCER1_CC1NE        2
+#define TIM1_CCER1_CC1P         1
+#define TIM1_CCER1_CC1E         0
 #define TIM1_CCER2              _SFR_(TIM1_BASE_ADDRESS + 0x0D)
+#define TIM1_CCER2_CC4P         5
+#define TIM1_CCER2_CC4E         4
+#define TIM1_CCER2_CC3NP        3
+#define TIM1_CCER2_CC3NE        2
+#define TIM1_CCER2_CC3P         1
+#define TIM1_CCER2_CC3E         0
 #define TIM1_CNTR               _SFR16_(TIM1_BASE_ADDRESS + 0x0E)
 #define TIM1_CNTRH              _SFR_(TIM1_BASE_ADDRESS + 0x0E)
 #define TIM1_CNTRL              _SFR_(TIM1_BASE_ADDRESS + 0x0F)
@@ -355,8 +925,23 @@
 #define TIM1_CCR4H              _SFR_(TIM1_BASE_ADDRESS + 0x1B)
 #define TIM1_CCR4L              _SFR_(TIM1_BASE_ADDRESS + 0x1C)
 #define TIM1_BKR                _SFR_(TIM1_BASE_ADDRESS + 0x1D)
+#define TIM1_BKR_MOE            7
+#define TIM1_BKR_AOE            6
+#define TIM1_BKR_BKP            5
+#define TIM1_BKR_BKE            4
+#define TIM1_BKR_OSSR           3
+#define TIM1_BKR_OSSI           2
+#define TIM1_BKR_LOCK1          1
+#define TIM1_BKR_LOCK0          0
 #define TIM1_DTR                _SFR_(TIM1_BASE_ADDRESS + 0x1E)
 #define TIM1_OISR               _SFR_(TIM1_BASE_ADDRESS + 0x1F)
+#define TIM1_OISR_OIS4          6
+#define TIM1_OISR_OIS3N         5
+#define TIM1_OISR_OIS3          4
+#define TIM1_OISR_OIS2N         3
+#define TIM1_OISR_OIS2          2
+#define TIM1_OISR_OIS1N         1
+#define TIM1_OISR_OIS1          0
 
 /* TIM2 (mutually exclusive with TIM5) */
 #define TIM2_BASE_ADDRESS       0x5300
@@ -367,19 +952,71 @@
 #define TIM2_CR1_UDIS           1
 #define TIM2_CR1_CEN            0
 #define TIM2_IER                _SFR_(TIM2_BASE_ADDRESS + 0x03)
+#define TIM2_IER_CC3IE          3
+#define TIM2_IER_CC2IE          2
+#define TIM2_IER_CC1IE          1
+#define TIM2_IER_UIE            0
 #define TIM2_SR1                _SFR_(TIM2_BASE_ADDRESS + 0x04)
+#define TIM2_SR1_CC3IF          3
+#define TIM2_SR1_CC2IF          2
+#define TIM2_SR1_CC1IF          1
+#define TIM2_SR1_UIF            0
 #define TIM2_SR2                _SFR_(TIM2_BASE_ADDRESS + 0x05)
+#define TIM2_SR2_CC3OF          3
+#define TIM2_SR2_CC2OF          2
+#define TIM2_SR2_CC1OF          1
 #define TIM2_EGR                _SFR_(TIM2_BASE_ADDRESS + 0x06)
-#define TIM2_EGR_TG             6
 #define TIM2_EGR_CC3G           3
 #define TIM2_EGR_CC2G           2
 #define TIM2_EGR_CC1G           1
 #define TIM2_EGR_UG             0
 #define TIM2_CCMR1              _SFR_(TIM2_BASE_ADDRESS + 0x07)
+#define TIM2_CCMR1_IC1F3        7
+#define TIM2_CCMR1_OC1M2        6
+#define TIM2_CCMR1_IC1F2        6
+#define TIM2_CCMR1_OC1M1        5
+#define TIM2_CCMR1_IC1F1        5
+#define TIM2_CCMR1_OC1M0        4
+#define TIM2_CCMR1_IC1F0        4
+#define TIM2_CCMR1_OC1PE        3
+#define TIM2_CCMR1_IC1PSC1      3
+#define TIM2_CCMR1_IC1PSC0      2
+#define TIM2_CCMR1_CC1S1        1
+#define TIM2_CCMR1_CC1S0        0
 #define TIM2_CCMR2              _SFR_(TIM2_BASE_ADDRESS + 0x08)
+#define TIM2_CCMR2_IC2F3        7
+#define TIM2_CCMR2_OC2M2        6
+#define TIM2_CCMR2_IC2F2        6
+#define TIM2_CCMR2_OC2M1        5
+#define TIM2_CCMR2_IC2F1        5
+#define TIM2_CCMR2_OC2M0        4
+#define TIM2_CCMR2_IC2F0        4
+#define TIM2_CCMR2_OC2PE        3
+#define TIM2_CCMR2_IC2PSC1      3
+#define TIM2_CCMR2_IC2PSC0      2
+#define TIM2_CCMR2_CC2S1        1
+#define TIM2_CCMR2_CC2S0        0
 #define TIM2_CCMR3              _SFR_(TIM2_BASE_ADDRESS + 0x09)
+#define TIM2_CCMR3_IC3F3        7
+#define TIM2_CCMR3_OC3M2        6
+#define TIM2_CCMR3_IC3F2        6
+#define TIM2_CCMR3_OC3M1        5
+#define TIM2_CCMR3_IC3F1        5
+#define TIM2_CCMR3_OC3M0        4
+#define TIM2_CCMR3_IC3F0        4
+#define TIM2_CCMR3_OC3PE        3
+#define TIM2_CCMR3_IC3PSC1      3
+#define TIM2_CCMR3_IC3PSC0      2
+#define TIM2_CCMR3_CC3S1        1
+#define TIM2_CCMR3_CC3S0        0
 #define TIM2_CCER1              _SFR_(TIM2_BASE_ADDRESS + 0x0A)
+#define TIM2_CCER1_CC2P         5
+#define TIM2_CCER1_CC2E         4
+#define TIM2_CCER1_CC1P         1
+#define TIM2_CCER1_CC1E         0
 #define TIM2_CCER2              _SFR_(TIM2_BASE_ADDRESS + 0x0B)
+#define TIM2_CCER2_CC3P         1
+#define TIM2_CCER2_CC3E         0
 #define TIM2_CNTR               _SFR16_(TIM2_BASE_ADDRESS + 0x0C)
 #define TIM2_CNTRH              _SFR_(TIM2_BASE_ADDRESS + 0x0C)
 #define TIM2_CNTRL              _SFR_(TIM2_BASE_ADDRESS + 0x0D)
@@ -607,6 +1244,8 @@
 /* Global Configuration */
 #define CFG_BASE_ADDRESS        0x7F60
 #define CFG_GCR                 _SFR_(CFG_BASE_ADDRESS + 0x00)
+#define CFG_GCR_AL              1
+#define CFG_GCR_SWD             0
 
 /* Interrupt Priority */
 #define ITC_BASE_ADDRESS        0x7F60
@@ -655,9 +1294,35 @@
 #define CPU_CCR                 _MEM_(0x7F0A)
 
 /* misc inline macros */
-#define enable_interrupts()     __asm__("rim");
-#define disable_interrupts()    __asm__("sim");
-#define nop()                   __asm__("nop");
-#define halt()                  __asm__("halt");
+#define enable_interrupts()     __asm__("rim")
+#define disable_interrupts()    __asm__("sim")
+#define rim()                   __asm__("rim")
+#define sim()                   __asm__("sim")
+#define nop()                   __asm__("nop")
+#define halt()                  __asm__("halt")
+#define wfi()                   __asm__("wfi")
+
+/*  Configure STM8S001J3 nc pins to push-pull output state. Recommendation of DS12129 Rev.3 pg.23.
+    Should be call first in main(). */
+#define stm8s001j3_config_unused_pins()   { PA_DDR = 0x04; PB_DDR = 0xCF; PC_DDR = 0x86; \
+                                            PD_DDR = 0x95; PE_DDR = 0x20; PF_DDR = 0x10; \
+                                            PA_CR1 = 0x04; PB_CR1 = 0xCF; PC_CR1 = 0x86; \
+                                            PD_CR1 = 0x97; PE_CR1 = 0x20; PF_CR1 = 0x10; }
+
+/*  Perform delay of 5 seconds @2MHz before disable STM8S001J3 SWIM pin.
+    Recommendation of DS12129 Rev.3 pg.12.
+    Should be call before clock change in main(). */
+#define stm8s001j3_swim_delay_5s()  __asm__("   pushw x             \n" \
+                                            "   push a              \n" \
+                                            "   clrw x              \n" \
+                                            "00001$:                \n" \
+                                            "   ld a, #0x32         \n" \
+                                            "00002$:                \n" \
+                                            "   dec a               \n" \
+                                            "   jrne 00002$         \n" \
+                                            "   decw x              \n" \
+                                            "   jrne 00001$         \n" \
+                                            "   pop a               \n" \
+                                            "   popw x              \n");
 
 #endif /* STM8S_H */
