@@ -4,15 +4,16 @@ MCU  = stm8l051f3
 ARCH = stm8
 
 F_CPU   ?= 2000000
-TARGET  ?= main.ihx
+TARGET  ?= main
 
+BUILD_DIR= build
 LIBDIR   = ../../lib
+
+DEFINE   =
+INCLUDE  =
 
 SRCS    := $(wildcard *.c $(LIBDIR)/*.c)
 ASRCS   := $(wildcard *.s $(LIBDIR)/*.s)
-
-OBJS     = $(SRCS:.c=.rel)
-OBJS    += $(ASRCS:.s=.rel)
 
 CC       = sdcc
 LD       = sdld
@@ -20,7 +21,7 @@ AS       = sdasstm8
 OBJCOPY  = sdobjcopy
 ASFLAGS  = -plosgff
 CFLAGS   = -m$(ARCH) -p$(MCU) --std-sdcc11
-CFLAGS  += -DF_CPU=$(F_CPU)UL -I. -I$(LIBDIR)
+CFLAGS  += -DF_CPU=$(F_CPU)UL -I. -I$(LIBDIR) $(INCLUDE) $(DEFINE)
 CFLAGS  += --stack-auto --noinduction --use-non-free
 ## Disable lospre (workaround for bug 2673)
 #CFLAGS  += --nolospre
@@ -28,27 +29,40 @@ CFLAGS  += --stack-auto --noinduction --use-non-free
 #CFLAGS  += --peep-file $(LIBDIR)/util/extra.def
 LDFLAGS  = -m$(ARCH) -l$(ARCH) --out-fmt-ihx
 
-all: $(TARGET) size
+OBJS     = $(addprefix $(BUILD_DIR)/,$(notdir $(SRCS:.c=.rel)))
+OBJS    += $(addprefix $(BUILD_DIR)/,$(notdir $(ASRCS:.s=.rel)))
+vpath %.c  $(sort $(dir $(SRCS)))
+vpath %.s  $(sort $(dir $(ASRCS)))
 
-$(TARGET): $(OBJS)
+all: $(BUILD_DIR)/$(TARGET).bin size
+
+$(BUILD_DIR)/%.rel: %.c | $(BUILD_DIR)
+	$(CC) -c $(CFLAGS) $< -o $@
+
+$(BUILD_DIR)/%.rel: %.s | $(BUILD_DIR)
+	$(AS) $(ASFLAGS) $<
+	mv *.lst *.rel *.sym $(BUILD_DIR)
+
+$(BUILD_DIR)/$(TARGET).hex: $(OBJS)
 	$(CC) $(LDFLAGS) $(OBJS) -o $@
 
-%.rel: %.c
-	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+$(BUILD_DIR)/$(TARGET).bin: $(BUILD_DIR)/$(TARGET).hex
+	$(OBJCOPY) -I ihex --output-target=binary $(BUILD_DIR)/$(TARGET).hex $(BUILD_DIR)/$(TARGET).bin
 
-%.rel: %.s
-	$(AS) $(ASFLAGS) $<
-
-size:
-	@$(OBJCOPY) -I ihex --output-target=binary $(TARGET) $(TARGET).bin
-	@echo "----------"
+size: $(BUILD_DIR)/$(TARGET).bin 
 	@echo "Image size:"
-	@stat -L -c %s $(TARGET).bin
+	@stat -L -c %s $(BUILD_DIR)/$(TARGET).bin
 
-flash: $(TARGET)
-	stm8flash -c stlinkv2 -p $(MCU) -w $(TARGET)
+$(BUILD_DIR):
+	mkdir $@
 
 clean:
-	rm -f *.map *.asm *.rel *.ihx *.o *.sym *.lk *.lst *.rst *.cdb *.bin
+	rm -fR $(BUILD_DIR)
+
+flash: $(BUILD_DIR)/$(TARGET).hex
+	stm8flash -c stlinkv2 -p $(MCU) -w $(BUILD_DIR)/$(TARGET).hex
+
+serial: $(BUILD_DIR)/$(TARGET).hex
+	stm8gal -p /dev/ttyUSB0 -w $(BUILD_DIR)/$(TARGET).hex
 
 .PHONY: clean all flash
