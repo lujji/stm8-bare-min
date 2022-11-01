@@ -609,15 +609,15 @@
 #define CFG_GCR                 _SFR_(CFG_BASE_ADDRESS + 0x00)
 
 /* Interrupt Priority */
-#define ITC_BASE_ADDRESS        0x7F60
-#define ITC_ISPR1               _SFR_(CFG_BASE_ADDRESS + 0x00)
-#define ITC_ISPR2               _SFR_(CFG_BASE_ADDRESS + 0x01)
-#define ITC_ISPR3               _SFR_(CFG_BASE_ADDRESS + 0x02)
-#define ITC_ISPR4               _SFR_(CFG_BASE_ADDRESS + 0x03)
-#define ITC_ISPR5               _SFR_(CFG_BASE_ADDRESS + 0x04)
-#define ITC_ISPR6               _SFR_(CFG_BASE_ADDRESS + 0x05)
-#define ITC_ISPR7               _SFR_(CFG_BASE_ADDRESS + 0x06)
-#define ITC_ISPR8               _SFR_(CFG_BASE_ADDRESS + 0x07)
+#define ITC_BASE_ADDRESS        0x7F70
+#define ITC_ISPR1               _SFR_(ITC_BASE_ADDRESS + 0x00)
+#define ITC_ISPR2               _SFR_(ITC_BASE_ADDRESS + 0x01)
+#define ITC_ISPR3               _SFR_(ITC_BASE_ADDRESS + 0x02)
+#define ITC_ISPR4               _SFR_(ITC_BASE_ADDRESS + 0x03)
+#define ITC_ISPR5               _SFR_(ITC_BASE_ADDRESS + 0x04)
+#define ITC_ISPR6               _SFR_(ITC_BASE_ADDRESS + 0x05)
+#define ITC_ISPR7               _SFR_(ITC_BASE_ADDRESS + 0x06)
+#define ITC_ISPR8               _SFR_(ITC_BASE_ADDRESS + 0x07)
 
 /* Interrupts */
 #define TLI_ISR                 0
